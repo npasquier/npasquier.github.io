@@ -8,7 +8,7 @@ body {
   font-family: "Gill Sans", sans-serif;
   line-height: 1.5;
   font-size: 16px;
-  background-color: #EAE7DC;
+  background-color: #EAE7DC ;
   opacity: 1;
 }
 
@@ -88,8 +88,8 @@ a {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  border: 1px solid #DADED4;
-  background-color: #DADED4;
+  background: linear-gradient(90deg, #DADED4, #EAE7DC) ;
+  border-radius: 0 20px 20px 0;
 }
 
 .nav_social {
@@ -99,6 +99,7 @@ a {
 .nav_social a {
   display: block;
   color: #666;
+  border: 1px solid #DADED4;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
