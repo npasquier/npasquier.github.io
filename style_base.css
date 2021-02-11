@@ -88,8 +88,8 @@ a {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: linear-gradient(90deg, #DADED4, #EAE7DC) ;
-  border-radius: 0 20px 20px 0;
+  background-color: #DADED4 ; /* background: linear-gradient(90deg, #DADED4, #EAE7DC) */
+  /* border-radius: 0 20px 20px 0; */
 }
 
 .nav_social {
