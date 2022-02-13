@@ -131,6 +131,12 @@ a {
     text-align: left;
 }
 
+@media only screen and (max-width: 765px) {
+  .second-column {
+    width:100%;
+    }
+  }
+
 .description:after {
   content: "";
   display: table;
