@@ -131,11 +131,7 @@ a {
     text-align: left;
 }
 
-@media only screen and (max-width: 765px) {
-  .second-column {
-    width:100%;
-    }
-  }
+
 
 .description:after {
   content: "";
@@ -154,6 +150,43 @@ a {
    padding: 0px;
    font-style: italic;
 }
+
+
+/* **************************************************************** */
+/* **************** SHAPE FOR SMARTPHONES ************************* */
+/* **************************************************************** */
+
+@media only screen and (max-width: 765px) {
+  .description {
+    margin-left: 2% ;
+    margin-right: 2%;
+  }
+  .second-column {
+    width:100%;
+    text-align: center;
+    }
+  .first-column {
+      width:100%;
+      text-align: center;
+      }
+  .img_profile {
+        width: 40%;
+        height: 60% ;
+            }
+  nav {
+        margin-left: 2% ;
+        margin-right: 2%;
+  }
+  .working_papers {
+    margin-left: 2% ;
+    margin-right: 8%;
+  }
+
+  .work_in_progress {
+    margin-left: 2% ;
+    margin-right: 8%;
+  }
+
 
 /* **************************************************************** */
 /* ************************* TABLE ******************************** */
