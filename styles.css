@@ -1,0 +1,140 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus {
+  color: #333;
+}
+
+a:hover {
+  color: black;
+}
+
+/* Custom button */
+.btn-secondary {
+  background-color: white; 
+  border: .05rem solid #333;
+  text-shadow: 0 .05rem .05rem #333;
+  color: #333;
+}
+.btn-secondary:hover {
+  background-color: #E9E8E8;
+  text-shadow: 0 .05rem .05rem #333;
+  color: #333;
+}
+.btn-secondary:focus {
+  color: #2E4F4F;
+  
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+ 
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, .7);
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .7);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .7);
+  
+}
+
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+ 
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+
+/*
+* Image Profile
+*/
+
+.profile-picture-img {  
+    width: 200px;
+    margin-top: 10%;
+    margin-bottom: 2% ;
+    margin-left : auto;
+    margin-right : auto;
+    border-radius: 500%;
+    padding: 2px;
+    border: #333 1px solid;
+    /* background-image: url('https://images.pexels.com/photos/4947176/pexels-photo-4947176.jpeg');
+  background-size: cover; */
+  
+    
+}
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: rgba(255, 255, 255, .5);
+}
+
+/* Background image */
+
+
+
+.back-image {
+  background: url('./images/mountains.jpg') no-repeat center center fixed; 
+  /* or you want the image go to url('https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg')   */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} 
+
+
+
+/* Flex items */
+
+
+.first-flex-item {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 105%;
+  margin: 0;
+  
+}
+
+.second-flex-item {
+  margin: 5rem auto 5rem auto ;
+}
+
+.flex-item-spacing {
+  margin: 5rem auto 5rem auto ;
+}
+
+
+/* Responsiveness of second flex item */
+
+@media (min-width:900px) {
+  .second-flex-item {
+      width: 50%;
+  }
+}
