@@ -101,8 +101,7 @@ body {
 
 
 .back-image {
-  background: url('./images/mountains.jpg') no-repeat center center fixed; 
-  /* or you want the image go to url('https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg')   */
+  background: url('https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
