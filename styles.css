@@ -50,8 +50,8 @@ body {
   -webkit-box-pack: center;
   justify-content: center;
   color: rgba(0, 0, 0, .7);
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .7);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .7);
+  text-shadow: 0 .05rem .1rem #333;
+  box-shadow: 0 .05rem .1rem #333;
   
 }
 
@@ -93,26 +93,31 @@ body {
  */
 
 .mastfoot {
-  color: rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, .6);
 }
 
-/* Background image */
+/* 
+* Background image 
+*/
 
 
 
 .back-image {
   background: url('./images/mountains.jpg') no-repeat center center fixed; 
   /*     The url of image is 'https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg' */
-  -webkit-background-size: cover;
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover; */
   background-size: cover;
+  max-width: 100%;
 } 
 
 
 
 
-/* Flex items */
+/* 
+* Flex items 
+*/
 
 
 .first-flex-item {
@@ -132,10 +137,27 @@ body {
 }
 
 
-/* Responsiveness of second flex item */
+/* 
+* Responsiveness of second flex item 
+*/
 
 @media (min-width:900px) {
   .second-flex-item {
       width: 50%;
   }
+}
+
+
+
+
+/* 
+* Dots 
+*/
+
+.dots {
+  border: none;
+  border-top: 10px dotted;
+  border-color: grey;
+  width: 4%;
+  margin: 0 auto 0 auto;
 }
