@@ -100,7 +100,7 @@ body {
 
 
 .back-image {
-  background: url('./images/mountains.jpg') no-repeat center fixed; 
+  background: url('./images/mountains.jpg') no-repeat  center  scroll; 
   /*     The url of image is 'https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg' */
   /* -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -121,9 +121,8 @@ body {
   flex-shrink: 0;
   flex-basis: 100%;
   margin: 0;
-  padding-top: 15%;
+  padding-top: 10%;
   padding-bottom: auto;
-  
 }
 
 .second-flex-item {
@@ -144,6 +143,8 @@ body {
       width: 50%;
   }
 }
+
+
 
 
 
