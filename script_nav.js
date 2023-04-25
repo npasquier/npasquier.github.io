@@ -19,4 +19,12 @@ document.addEventListener("keydown", (e) => {
     }
   );
 
+  document.querySelector("img").addEventListener("touchstart", (e) => {
+    document.querySelector('nav').classList.toggle('hideHeader');
+  }
+);
+
+
+  
+
 
