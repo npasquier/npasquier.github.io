@@ -19,7 +19,7 @@ document.addEventListener("keydown", (e) => {
     }
   );
 
-  document.querySelector("img").addEventListener("touchstart", (e) => {
+  document.querySelector("img").addEventListener("touchend", (e) => {
     document.querySelector('nav').classList.toggle('hideHeader');
   }
 );
