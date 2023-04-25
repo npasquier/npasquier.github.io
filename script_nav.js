@@ -19,8 +19,8 @@ document.addEventListener("keydown", (e) => {
     }
   );
 
-  document.querySelector("img").addEventListener("touchend", (e) => {
-    document.querySelector('nav').classList.toggle('hideHeader');
+  document.querySelector("img").addEventListener("touchstart", (e) => {
+    document.querySelector('nav').classList.remove('hideHeader');
   }
 );
 
