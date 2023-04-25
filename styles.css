@@ -131,11 +131,9 @@ body {
 .back-image {
   background: url('./images/mountains.jpg') no-repeat  center fixed; 
   /*     The url of image is 'https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg' */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover; 
   background-size: cover;
   width: 100%;
+  height: 100%;
 } 
 
 
