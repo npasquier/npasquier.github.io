@@ -1,10 +1,10 @@
 
 
 
-// document.addEventListener('keydown', function (event) {
-//     console.log(event.key);
-//  }
-//  );
+/*
+Display Menu upon Click on Image or Press 'v' 
+*/
+
 
 document.addEventListener("keydown", (e) => {
     if (e.key === 'v') {
@@ -14,7 +14,9 @@ document.addEventListener("keydown", (e) => {
     }
   });
 
+  document.querySelector("img").addEventListener("click", (e) => {
+      document.querySelector('nav').classList.toggle('hideHeader');
+    }
+  );
 
-// document.addEventListener("keydown", function (e) {
-//       console.log(e.key);
-//   });
+

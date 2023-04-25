@@ -16,29 +16,57 @@
         <!-- Custom styles for this template -->
         <link href="styles.css" rel="stylesheet">
       </head>
-<body>
+  <body class="text-center">
 
-    <div class="d-flex h-100 flex-column"> 
+    <div class="d-flex w-100 h-100 mx-auto flex-column "> 
 
-    <header class="mb-auto">
+      <header class="mb-auto">
         <div>
           <!-- <h3 class="float-md-start mb-0">Cover</h3> -->
-          <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link fw-bold py-1 px-0 " aria-current="page" href="index.html">Home</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#">Playground</a>
+          <nav class="nav nav-masthead justify-content-center float-md-end mx-3">
+            <a class="nav-link fw-bold py-1 px-1 " aria-current="page" href="index.html">Home</a>
+            <a class="nav-link fw-bold py-1 px-1 active" href="#">Playground</a>
+          </nav>
           </nav>
         </div>
       </header>
+
       <main>
         <div class="first-flex-item">
-            <h1>APIs</h1>
+
+          <h6> Welcome to the playground part. Feel free to explore the features I am trying to build over time. </h6>
+
         </div>
+
+
+        <div class="first-flex-item">
+            <h1>Joke API</h1>
+
+            <p> Click to get a (dark) joke.</p>
+
+               <button class="btn btn-secondary" type="submit" onclick="displayJoke()"> Give me one </button>
+               <br>
+
+                <p class="m-3" id="getJoke"></p>
+           
+
+
+        </div>
+
+  
+
 
       </main>
       
-    
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Copyright npasquier</p>
+        </div>
+      </footer>
 
     </div>
-    
-</body>
+
+    <script type="text/javascript" src="script.js" ></script>
+
+  </body>
 </html>
