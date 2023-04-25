@@ -20,7 +20,7 @@ document.addEventListener("keydown", (e) => {
   );
 
   document.querySelector("img").addEventListener("touchstart", (e) => {
-    setTimeout( () => {document.querySelector('nav').classList.remove('hideHeader');} , 5000)
+    setTimeout( () => {document.querySelector('nav').classList.remove('hideHeader');} , 10000)
   }
 );
 
