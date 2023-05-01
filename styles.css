@@ -115,6 +115,27 @@ body {
 }
 
 /*
+* Arrow
+*/
+
+.textArrow {
+  font-family: 'Reenie Beanie', cursive;
+  margin: 2% auto 0% auto;
+  font-size: 40px;
+}
+
+.arrow {
+  height: 60px;
+  margin: 1% auto 2% auto;
+}
+
+
+.hideArrow {
+  visibility: hidden;
+}
+
+
+/*
  * Footer
  */
 
