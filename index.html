@@ -9,7 +9,7 @@
     <meta name="google-site-verification" content="dTR1v6mO5Ulif2IWgYDPAtmtCtBwGNQHEKAiKdgJU1A" />
     <meta name="description" content="Nicolas Pasquier Website">
     <meta name="author" content="Nicolas Pasquier">
-    <link rel="icon" href="./images/smile.ico">
+    <link id=favicon rel="icon" href="./images/smile.ico">
 
     <title>Nicolas Pasquier</title>
 
@@ -28,42 +28,52 @@
 
   <body class="text-center">
     
+    
 
-      <div class="d-flex w-100 h-100 mx-auto flex-column back-image">  
 
-        <header class="mb-auto">
-          <div>
-            <nav class="nav nav-masthead justify-content-center float-md-end mx-3 hideHeader">
-              <a class="nav-link fw-bold py-1 px-1 active" aria-current="page" href="#">Home</a>
-              <a class="nav-link fw-bold py-1 px-1" href="playground.html">Playground</a>
-            </nav>
+      <div class="d-flex w-100 h-100 mx-auto flex-column ">  
+
+        <div class="back-image">
+
+          <header class="mb-auto">
+            <div>
+              <nav class="nav nav-masthead justify-content-center float-md-end mx-3 hideHeader">
+                <a class="nav-link fw-bold py-1 px-1 active" aria-current="page" href="#">Home</a>
+                <a class="nav-link fw-bold py-1 px-1" href="playground.html">Playground</a>
+              </nav>
+            </div>
+          </header>
+      
+          
+          <div class="d-flex flex-column h-100 w-100 justify-content-center">
+            <div class="m-auto">
+              <h1> I'm Nicolas </h1>
+              <p> PhD. in economics</p>
+              <br>
+              <h6> Welcome to my website! </h6>
+            </div>
+      
+            <div class="first-flex-arrow hideArrow mb-3">
+              <p class="textArrow "> Please scroll down</p>
+              <img class="arrow" src="./images/down-arrow.png" loading="lazy" alt="arrow-img">
+            </div>
+           </div>
           </div>
-        </header>
+
+        
+
         
           <!-- First flex item -->
+        <main>
           
-          <div class="first-flex-item">
-
-            <img class="profile-picture-img" src="./images/profile.png" loading="eager" alt="profile-img">
-            <h1 class="cover-heading">I'm Nicolas </h1>
-            <p class="lead">PhD. in economics</p>
-
-            <br>
-
-            <h6> Welcome to my website! </h6>
-
-            <br>
-            
-            <p class="textArrow hideArrow"> You can scroll down</p>
-            <img class="arrow hideArrow" src="./images/down-arrow.png" loading="lazy" alt="arrow-img">
-
-          </div>
-
 
           <!-- Second flex item -->  
-          <div class="second-flex-item p-3" >
+          <div class="my-5 mx-auto second-flex-item p-3" >
 
-            <h3> Hello. </h3>
+            <img class="profile-picture-img" src="./images/profile.png" loading="lazy" alt="profile-img">
+            
+
+            <h3 class="mt-5"> Hello. </h3>
             <br>
 
 
@@ -79,51 +89,104 @@
               
               <br>
 
-              <button onclick="location.href='CV/npasquier_CV_EN.pdf'" class="btn btn-secondary">
-                Click here to load my CV
-              </button>
           </div>
 
           <hr class="dots">
           
           <!-- Other flex items -->  
 
-          <div class="flex-item-spacing p-3">
-            <h3 >Publications </h3>
-            <br>
-           
+          <div class="d-flex flex-column my-5 mx-auto p-3 research-flex-item">
+
+            
+            <div class="d-flex my-5 mx-auto p-3 ">
+                
+              <div class="item-img">
+                <img class="flex-img" src="./images/books-stack-of-three.png" loading="lazy" alt="books-img">
+              </div>
+              <div class="my-auto"> <h3>Research </h3></div>
+            </div>
+  
+            
+            <div class="publi-item-text">
+
+            <h4 >Publications </h4>
+              <ul>
               <li>  "<a style="text-decoration: underline" href="https://doi.org/10.1515/bejte-2021-0070">Management turnover, strategic ambiguity and supply incentives</a>", with P. Toquebeuf </li>
                <p class="info"> The B.E. Journal of Theoretical Economics, 2023, Vol. 23 (1), pp. 121-154. </p>
           
               <li>  "<a style="text-decoration: underline" href="https://doi.org/10.1007/s11238-022-09868-x">Risk aversion and equilibrium selection in a vertical contracting setting: An experiment</a>", with O. Bonroy and A. Garapin  </li>
               <p class="info"> Theory and Decision, 2022, Vol. 93(4), pp. 585-614. </p>
-           
-          
+              <br>
+
+              </ul>
+              <h4 >Working papers </h4>
+            
+              <ul>
+                <li > "<a class="work_title">Decentralization and consumer welfare with substitutes or complements"</a> </li>
+                <p class="info"> 3rd R&R at Review of Industrial Organization,  &nbsp; &nbsp; <a href="Papers/Pasquier_2022_RRR.pdf">[Version Dec. 2022]</a> &nbsp; &nbsp; <a href="Papers/Pasquier_2022_App.pdf">[Supp. appendix]</a></p>
+            
+                <li> "<a class="work_title">Promotion of emission-based innovations in the biofuel sector</a>", with S. Lemari&eacute;</li>
+                <p class="info"> [Draft available upon request] </p>
+            
+                <li> "<a class="work_title">Two part tariff, demand uncertainty and risk aversion: From theory to experimental evidence</a>", with O. Bonroy and A. Garapin</li>
+                <p class = "info" > [Draft available upon request]  </p>
+            
+                <li> "<a class="work_title">Marketplace's incentives to promote a personalized pricing device: Does it pay-off to boost consumer disloyalty?</a>", with R. B. Esteves </li>
+                <p class ="info"> [Draft available upon request]</p>
+              </ul>
+            </div>
             </div>
 
             <hr class="dots">
           
-            <div class="flex-item-spacing">
-            <h3 >Working papers</h3>
-            <br>
-          
-          
-              <li > "<a class="work_title">Decentralization and consumer welfare with substitutes or complements"</a> </li>
-              <p class="info"> 3rd R&R at Review of Industrial Organization,  &nbsp; &nbsp; <a href="Papers/Pasquier_2022_RRR.pdf">[Version Dec. 2022]</a> &nbsp; &nbsp; <a href="Papers/Pasquier_2022_App.pdf">[Supp. appendix]</a></p>
-          
-              <li> "<a class="work_title">Promotion of emission-based innovations in the biofuel sector</a>", with S. Lemari&eacute;</li>
-              <p class="info"> [Draft available upon request] </p>
-          
-              <li> "<a class="work_title">Two part tariff, demand uncertainty and risk aversion: From theory to experimental evidence</a>", with O. Bonroy and A. Garapin</li>
-              <p class = "info" > [Draft available upon request]  </p>
-          
-              <li> "<a class="work_title">Marketplace's incentives to promote a personalized pricing device: Does it pay-off to boost consumer disloyalty?</a>", with R. B. Esteves </li>
-              <p class ="info"> [Draft available upon request]</p>
-          
-          
+            <div class="d-flex flex-column my-5 mx-auto p-3 research-flex-item">
+    
+              <div class="d-flex my-5 mx-auto p-3 ">
+                
+                <div class="publi-item-img">
+                  <img class="flex-img" src="./images/diploma.png" loading="lazy" alt="books-img">
+                </div>
+                <div class="my-auto"> <h3>Diploma </h3></div>
+              </div>
+    
+              <div class="publi-item-text">
+                  <ul>
+                  <li>  PhD in economics, University Grenoble-Alpes (hosted by UMR GAEL), 2019.</li>
+              
+                  <li>  M2 Empirical and Theoretical Economics, Paris School of Economics, 2015.</li>
+                  <li>  Magistère in economics, University Paris 1, 2015.</li>
+    
+                  </ul>
+                  
+                </div>
+           
             </div>
 
+            <hr class="dots">
+          
+            <div class="d-flex flex-column my-5 mx-auto p-3 research-flex-item">
+    
+              <div class="d-flex my-5 mx-auto p-3 ">
+                
+                <div class="publi-item-img">
+                  <img class="flex-img" src="./images/briefcase.png" loading="lazy" alt="books-img">
+                </div>
+                <div class="my-auto"> <h3> Past positions </h3></div>
+              </div>
+    
+              <div class="publi-item-text">
+                  <ul>
+                  <li> Post-doc fellow at University of Bordeaux, Sep. 2022 - Sep. 2024</li>
+                  <li> Post-doc fellow at University of Minho, June 2021 - June 2022</li>
+                  <li>  Post-doc fellow at INRAE, Sep. 2019- Dec. 2020.</li>
       
+                  </ul>
+                  
+                </div>
+           
+            </div>
+
+        </main>
          <!-- Copyright -->  
         <footer class="mastfoot mt-auto">
           <div class="inner">
