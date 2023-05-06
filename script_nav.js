@@ -42,5 +42,30 @@ document.querySelector(".back-image").addEventListener("click", (e) => {
 }
 );
 
+/* 
+* Animation
+*/
+
+const observer = new IntersectionObserver(entries => {
+  // Loop over the entries
+  entries.forEach(entry => {
+    // If the element is visible
+    if (entry.isIntersecting) {
+      // Add the animation class
+      entry.target.classList.add('div-opacity-transition');
+    }
+    else {
+      entry.target.classList.remove('div-opacity-transition');
+    }
+  });
+});
+
+document.querySelectorAll('.div-opacity').forEach((i) => {
+  if (i) {
+      observer.observe(i);
+  }
+});
+
+
 
 

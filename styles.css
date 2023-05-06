@@ -148,7 +148,7 @@ body {
 
 
 .back-image {
-  background: url('./images/mountains.jpg') no-repeat  center fixed; 
+  background: url('./images/mountains.jpg') no-repeat center fixed; 
   /*     The url of image is 'https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg' */
   background-size: cover;
   flex-grow: 0;
@@ -190,13 +190,6 @@ body {
 
 
 
-
-
-
-
-
-
-
 /* 
 * Dots 
 */
@@ -208,3 +201,36 @@ body {
   width: 5%;
   margin: 0 auto 0 auto;
 }
+
+
+/*
+* Animation
+*/
+
+@keyframes wipe-enter {
+	0% {
+		transform: scale(0, .025);
+	}
+	50% {
+		transform: scale(1, .025);
+	}
+}
+
+.div-opacity {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .div-opacity {
+    transition: opacity ;
+    transition-duration: 3s ; 
+    transition-timing-function: ease ;
+    transition-delay: 250ms;
+  }
+}
+
+.div-opacity-transition {
+    opacity: 1;
+}
+
+
