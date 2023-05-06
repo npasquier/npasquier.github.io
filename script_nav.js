@@ -36,6 +36,8 @@ document.querySelector(".back-image").addEventListener("touchstart", (e) => {
   i++;
   if (i >= 3){
   setTimeout( () => {document.querySelector('.first-flex-arrow').classList.add('hideArrow');} , 2000);
+  i = 0;
+  return;
 };}
 );
 
