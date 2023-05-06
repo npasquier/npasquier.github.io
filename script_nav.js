@@ -30,10 +30,13 @@ document.querySelector(".profile-picture-img").addEventListener("touchstart", (e
 * Display arrow with delay
 */
 
+let i=0;
+  
 document.querySelector(".back-image").addEventListener("touchstart", (e) => {
-  document.querySelector('.first-flex-arrow').classList.toggle('hideArrow');
-  setTimeout( () => {document.querySelector('.first-flex-arrow').classList.add('hideArrow');} , 3000);
-}
+  i++;
+  if (i >= 3){
+  setTimeout( () => {document.querySelector('.first-flex-arrow').classList.add('hideArrow');} , 2000);
+};}
 );
 
 document.querySelector(".back-image").addEventListener("click", (e) => {
