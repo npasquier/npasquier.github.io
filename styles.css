@@ -173,6 +173,9 @@ body {
   .flex-item-spacing{
     width: 80%;
   }
+  .api-flex-item{
+    width: 50%;
+}
 }
 
 

@@ -19,7 +19,7 @@
       </head>
   <body class="text-center">
 
-    <div class="d-flex w-100 h-100 mx-auto p-3 flex-column "> 
+    <div class="d-flex w-100 mx-auto p-3 flex-column "> 
 
       <header class="mb-auto">
         <div>
@@ -33,23 +33,38 @@
       </header>
 
       <main>
-        <div class="first-flex-item">
+        <div class="my-5 mx-auto p-3">
 
           <h6> Welcome to the playground part. Feel free to explore the features I am trying to build over time. </h6>
 
         </div>
 
 
-        <div class="first-flex-item">
+        <div class="my-5 mx-auto p-3 api-flex-item">
             <h1>Joke API</h1>
 
             <p> Click to get a (dark) joke.</p>
 
-               <button class="btn btn-secondary" type="submit" onclick="displayJoke()"> Give me one </button>
+               <button class="btn btn-secondary" type="submit" onclick="displayJoke()"> Fire ! </button>
                <br>
 
             <p class="m-3" id="getJoke"></p>
            
+
+        </div>
+
+        <div class="my-5 mx-auto p-3 api-flex-item">
+          <h1>Weather API</h1>
+
+          <p> Enter the name of city and gets its current wheather.</p>
+          
+              <input type="text" id= 'cityInput' class="form-control" placeholder="City Name" name ='cityName'>         
+             <button class="btn btn-secondary my-2" type="submit" onclick="displayWeather()"> Give me the weather </button>
+             <br>
+           
+       
+          <p class="m-3" id="getWeather"></p>
+         
 
         </div>
 
