@@ -150,8 +150,19 @@ body {
   }
 }
 
+.adapt-screen {
+  width: 60%;
+}
+
+@media (max-width: 1400px) {
+  .adapt-screen {
+    width: 70%;
+  }
+}
+
 @media (max-width: 992px) {
   .adapt-screen {
+    width: 80%;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
