@@ -15,27 +15,27 @@ a:hover {
 /* Custom button */
 
 .btn-secondary {
-  background-color: white; 
-  border: .05rem solid #333;
-  text-shadow: 0 .05rem .05rem #333;
+  background-color: white;
+  border: 0.05rem solid #333;
+  text-shadow: 0 0.05rem 0.05rem #333;
   color: #333;
 }
 .btn-secondary:hover {
-  background-color: #E9E8E8;
-  text-shadow: 0 .05rem .05rem #333;
+  background-color: #e9e8e8;
+  text-shadow: 0 0.05rem 0.05rem #333;
   color: #333;
 }
 .btn-secondary:focus {
-  color: #2E4F4F;
+  color: #2e4f4f;
 }
 
 /*
  * Header
  */
 
- .nav-masthead .nav-link {
+.nav-masthead .nav-link {
   color: #333;
-  border-bottom: .25rem solid transparent;
+  border-bottom: 0.25rem solid transparent;
 }
 
 .nav-masthead .nav-link:hover,
@@ -55,7 +55,7 @@ a:hover {
 
 .hideHeader {
   /* display: none;  */
-   visibility: collapse; 
+  visibility: collapse;
 }
 
 /*
@@ -67,131 +67,116 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
- 
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 body {
   justify-content: center;
-  color: rgba(0, 0, 0, .7);
-  text-shadow: 0 .05rem .1rem #333;
-  box-shadow: 0 .05rem .1rem #333;
+  color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0.05rem 0.1rem #333;
+  box-shadow: 0 0.05rem 0.1rem #333;
 }
-
 
 /*
  * Cover
  */
 .cover {
   padding: 0 1.5rem;
- 
 }
 .cover .btn-lg {
-  padding: .75rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   font-weight: 700;
 }
-
 
 /*
 * Image Profile
 */
 
-.profile-picture-img {  
-    width: 200px;
-    margin-top: 2%;
-    margin-bottom: 2% ;
-    margin-left : auto;
-    margin-right : auto;
-    border-radius: 50%;
-    padding: 2px;
-    border: #333 1px solid;
-    /* background-image: url('https://images.pexels.com/photos/4947176/pexels-photo-4947176.jpeg');
+.profile-picture-img {
+  width: 200px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  padding: 2px;
+  border: #333 1px solid;
+  /* background-image: url('https://images.pexels.com/photos/4947176/pexels-photo-4947176.jpeg');
   background-size: cover; */
-  
-    
 }
-
-/*
-* Arrow
-*/
-
-.textArrow {
-  font-family: 'Reenie Beanie', cursive;
-  margin: 2% auto 0% auto;
-  font-size: 40px;
-}
-
-.arrow {
-  height: 60px;
-  margin: 1% auto 2% auto;
-}
-
-
-.hideArrow {
-  visibility: hidden;
-}
-
 
 /*
  * Footer
  */
 
 .mastfoot {
-  color: rgba(255, 255, 255, .6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* 
-* Background image 
+* Background  
 */
 
-
-
 .back-image {
-  background: url('./images/mountains.jpg') no-repeat center fixed; 
+  background: url("./images/mountains.jpg") no-repeat center fixed;
   /*     The url of image is 'https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg' */
   background-size: cover;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 100%;
-} 
+}
 
-
+.back-text {
+  background-color: rgba(233, 241, 239, 0.74);
+}
 
 /* 
 * Flex items . 
 */
 
-
-@media (min-width:900px) {
+@media (min-width: 900px) {
   .second-flex-item {
-      width: 50%;
+    width: 50%;
   }
-  .research-flex-item{
+  .research-flex-item {
     width: 60%;
   }
-  .flex-item-spacing{
+  .flex-item-spacing {
     width: 80%;
   }
-  .api-flex-item{
+  .api-flex-item {
     width: 50%;
-}
+  }
 }
 
+@media (max-width: 992px) {
+  .adapt-screen {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
 
 .publi-item-text {
   text-align: left;
   margin-right: auto;
 }
 
-.flex-img{
+.flex-img {
   height: 5rem;
   margin-right: 30px;
 }
 
+.institution {
+  color: #454444c8;
+  text-shadow: 0 0.05rem 0.1rem #454444c8;
+}
 
-
-
+.card_infos {
+  color: #454444c8;
+  text-shadow: 0 0.05rem 0.1rem #454444c8;
+}
 
 /* 
 * Dots 
@@ -205,18 +190,17 @@ body {
   margin: 0 auto 0 auto;
 }
 
-
 /*
 * Animation
 */
 
 @keyframes wipe-enter {
-	0% {
-		transform: scale(0, .025);
-	}
-	50% {
-		transform: scale(1, .025);
-	}
+  0% {
+    transform: scale(0, 0.025);
+  }
+  50% {
+    transform: scale(1, 0.025);
+  }
 }
 
 .div-opacity {
@@ -225,15 +209,37 @@ body {
 
 @media (prefers-reduced-motion: no-preference) {
   .div-opacity {
-    transition: opacity ;
-    transition-duration: 3s ; 
-    transition-timing-function: ease ;
+    transition: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
     transition-delay: 250ms;
   }
 }
 
 .div-opacity-transition {
-    opacity: 1;
+  opacity: 1;
 }
 
+/*
+* Read more
+*/
 
+#more {
+  display: none;
+  margin-top: 0px;
+}
+
+#myReadMoreBtn {
+  border: none;
+  background-color: transparent;
+  color: #333;
+  text-shadow: 0 0.05rem 0.1rem #333;
+  margin-bottom: 5px;
+}
+#myReadMoreBtn:hover {
+  text-shadow: 0 0.05rem 0.05rem #333;
+  color: #2e4f4f;
+}
+#myReadMoreBtny:focus {
+  color: #2e4f4f;
+}
