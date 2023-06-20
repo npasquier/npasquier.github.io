@@ -3,13 +3,43 @@
  */
 
 /* Links */
+
+a:link {
+  text-decoration: none;
+}
+
 a,
 a:focus {
   color: #333;
+  text-shadow: 0 0.05rem 0.1rem #333;
 }
 
 a:hover {
-  color: black;
+  color: #454444c8;
+}
+
+.hover-underline-animation {
+  color: #333;
+  text-shadow: 0 0.05rem 0.1rem #333;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #454444c8;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* Custom button */
@@ -18,7 +48,7 @@ a:hover {
   background-color: white;
   border: 0.05rem solid #333;
   text-shadow: 0 0.05rem 0.05rem #333;
-  color: #333;
+  color: white;
 }
 .btn-secondary:hover {
   background-color: #e9e8e8;
@@ -222,7 +252,7 @@ body {
   .div-opacity {
     transition: opacity;
     transition-duration: 250ms;
-    transition-timing-function: linear;
+    transition-timing-function: ease;
     transition-delay: 250ms;
   }
 }
