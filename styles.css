@@ -284,3 +284,30 @@ body {
 #myReadMoreBtny:focus {
   color: #2e4f4f;
 }
+
+/*
+
+*To-do List 
+*/
+
+h1 {
+  text-align: center;
+}
+
+.List-div {
+  max-width: 60%;
+  margin: 5% auto 5% auto;
+  background-color: rgba(245,245,220,0.5)  ;
+  border: solid 0.1rem black;
+  border-radius: 5px;
+  padding: 0%;
+}
+
+.list-group {
+  font-size: 1.2rem;
+}
+
+input[type=checkbox]:checked + span{
+    text-decoration-line: line-through;
+    opacity: 0.5;
+  }
