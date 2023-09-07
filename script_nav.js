@@ -13,7 +13,7 @@ document.addEventListener("keydown", (e) => {
 
 document
   .querySelector(".profile-picture-img")
-  .addEventListener("click", (e) => {
+  .addEventListener("mouseenter", (e) => {
     document.querySelector("#nav-playground").classList.toggle("hideHeader");
     document.querySelector("#favicon").href = "./images/smile_inv.ico";
   });

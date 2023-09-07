@@ -11,7 +11,6 @@ a:link {
 a,
 a:focus {
   color: #333;
-  text-shadow: 0 0.05rem 0.1rem #333;
 }
 
 a:hover {
@@ -20,7 +19,7 @@ a:hover {
 
 .hover-underline-animation {
   color: #333;
-  text-shadow: 0 0.05rem 0.1rem #333;
+  /* text-shadow: 0 0.05rem 0.1rem #333; */
   position: relative;
 }
 
@@ -99,12 +98,12 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+    /* text-shadow: 0 0.05rem 0.1rem #333; */
 }
 
 body {
   justify-content: center;
   color: rgba(0, 0, 0, 0.7);
-  text-shadow: 0 0.05rem 0.1rem #333;
   box-shadow: 0 0.05rem 0.1rem #333;
 }
 
@@ -211,12 +210,12 @@ body {
 
 .institution {
   color: #454444c8;
-  text-shadow: 0 0.05rem 0.1rem #454444c8;
+  /* text-shadow: 0 0.05rem 0.1rem #454444c8; */
 }
 
 .card_infos {
   color: #454444c8;
-  text-shadow: 0 0.05rem 0.1rem #454444c8;
+  /* text-shadow: 0 0.05rem 0.1rem #454444c8; */
 }
 
 /* 
@@ -296,18 +295,79 @@ h1 {
 
 .List-div {
   max-width: 60%;
-  margin: 5% auto 5% auto;
-  background-color: rgba(245,245,220,0.5)  ;
-  border: solid 0.1rem black;
+  margin: 3% auto 5% auto;
+  background-color: rgba(245,245,220,0.2)  ;
   border-radius: 5px;
   padding: 0%;
 }
 
 .list-group {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 input[type=checkbox]:checked + span{
     text-decoration-line: line-through;
     opacity: 0.5;
   }
+
+
+
+/*
+* Drum Kit
+*/
+
+
+.w {
+  background-image: url("./images/tom1.png");
+}
+
+.a {
+  background-image: url("./images/tom2.png");
+}
+
+.s {
+  background-image: url("./images/tom3.png");
+}
+
+.d {
+  background-image: url("./images/tom4.png");
+}
+
+.j {
+  background-image: url("./images/snare.png");
+}
+
+.k {
+  background-image: url("./images/crash.png");
+}
+
+.l {
+  background-image: url("./images/kick.png");
+}
+
+.set {
+  margin: 5% auto;
+}
+
+.drum {
+  outline: none;
+  border: 10px solid #404B69;
+  font-size: 3.5rem;
+  font-family: 'Arvo', cursive;
+  line-height: 2;
+  font-weight: 900;
+  color: gray;
+  text-shadow: 3px 0 #DBEDF3;
+  border-radius: 15px;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}

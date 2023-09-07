@@ -27,9 +27,9 @@
       crossorigin="anonymous"
     />
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-  />
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
 
     <!-- Custom styles for this template -->
     <link href="styles.css" rel="stylesheet" />
@@ -103,21 +103,29 @@
         <main>
           <div class="p-2">
             <div class="my-5 mx-auto p-3">
+              <h6 class="mb-5">
+                <strong> Welcome to the playground part. </strong>
+              </h6>
               <h6>
-                Welcome to the playground part. Feel free to explore the
-                features I am trying to build over time.
+                Feel free to play with some of the features I am building during
+                my learning.
+              </h6>
+              <h6>
+                You can also explore my GitHub page to access full-stack
+                contents.
               </h6>
             </div>
-
 
             <div
               class="my-5 mx-auto p-3 api-flex-item back-text rounded border adapt-screen"
             >
-              <h1>To-do List</h1>
+              <h1>The to-do list</h1>
+              <h6>You can use the to-do list as a memo while browsing the internet.</h6>
+              <h6>But please be advise that it resets at each page refresh!</h6>
               <div class="List-div">
-                
-          
-                <div class="flex-column p-4 align-items-center justify-content-center">
+                <div
+                  class="flex-column p-4 align-items-center justify-content-center"
+                >
                   <div class="list-group" id="listOfTasks">
                     <label
                       class="list-group-item d-flex gap-3 bg-body-tertiary"
@@ -140,11 +148,16 @@
                               class="form-control-plaintext m-0 p-0"
                               placeholder="New task"
                               name="newTask"
+                              autocomplete="off"
                             />
                           </span>
                         </div>
                         <div class="d-flex ms-auto">
-                          <button type="submit" class="btn btn-success" value="addBtn">
+                          <button
+                            type="submit"
+                            class="btn btn-success"
+                            value="addBtn"
+                          >
                             <i class="bi bi-capslock"></i>
                           </button>
                         </div>
@@ -153,18 +166,17 @@
                   </div>
                 </div>
               </div>
-              
             </div>
-
 
             <div
               class="my-5 mx-auto p-3 api-flex-item back-text rounded border adapt-screen"
             >
-              <h1>Joke API</h1>
+              <h1>(Dark) Joke API</h1>
 
-              <p>Click to get a (dark) joke.</p>
+              <p>Click to get a joke.</p>
 
               <button
+                id="darkJokeID"
                 class="btn btn-dark btn-sm"
                 type="submit"
                 onclick="displayJoke()"
@@ -179,28 +191,23 @@
             <div
               class="my-5 mx-auto p-3 api-flex-item back-text rounded border adapt-screen"
             >
-              <h1>Weather API</h1>
+              <h1>Drum 🥁 Kit</h1>
 
-              <p>Enter the name of city and gets its current wheather.</p>
+              <p>Boum ! Boum ! Hear that neighbor ?! </p>
 
-              <input
-                type="text"
-                id="cityInput"
-                class="form-control"
-                placeholder="City Name"
-                name="cityName"
-              />
-              <button
-                class="btn btn-dark btn-sm my-2"
-                type="submit"
-                onclick="displayWeather()"
-              >
-                Give me the weather
-              </button>
-              <br />
+              <div class="set">
+                <button class="w drum btn_drum">w</button>
+                <button class="a drum btn_drum">a</button>
+                <button class="s drum btn_drum">s</button>
+                <button class="d drum btn_drum">d</button>
+                <button class="j drum btn_drum">j</button>
+                <button class="k drum btn_drum">k</button>
+                <button class="l drum btn_drum">l</button>
+              </div>
 
-              <p class="m-3" id="getWeather"></p>
+              
             </div>
+
           </div>
         </main>
 
