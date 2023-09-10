@@ -301,6 +301,20 @@ h1 {
   padding: 0%;
 }
 
+@media (max-width: 992px) {
+  .List-div {
+    max-width: 100%;
+    margin: 1% auto 1% auto;
+    background-color: rgba(245,245,220,0.2)  ;
+    border-radius: 0px;
+    padding: 0%;
+  }
+  .list-group {
+    font-size: 1rem;
+  }
+
+}
+
 .list-group {
   font-size: 1.1rem;
 }
