@@ -317,31 +317,31 @@ input[type=checkbox]:checked + span{
 */
 
 
-.w {
+.a {
   background-image: url("./images/tom1.png");
 }
 
-.a {
+.z {
   background-image: url("./images/tom2.png");
 }
 
-.s {
+.e {
   background-image: url("./images/tom3.png");
 }
 
-.d {
+.r {
   background-image: url("./images/tom4.png");
 }
 
-.j {
+.i {
   background-image: url("./images/snare.png");
 }
 
-.k {
+.o {
   background-image: url("./images/crash.png");
 }
 
-.l {
+.p {
   background-image: url("./images/kick.png");
 }
 
