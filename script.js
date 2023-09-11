@@ -64,7 +64,7 @@ var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
 function makeSound(keyPressed) {
   if (
-    document.getElementById("keyboard-active").innerText == "Disactivate Keyboard"
+    document.getElementById("keyboard-active").innerText === "Disactivate Keyboard"
   ) {
     switch (keyPressed) {
       case "a":
