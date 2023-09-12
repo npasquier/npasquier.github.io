@@ -98,11 +98,11 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-    /* text-shadow: 0 0.05rem 0.1rem #333; */
+  /* text-shadow: 0 0.05rem 0.1rem #333; */
 }
 
 body {
-  justify-content: center;
+  /* justify-content: center; */
   color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 0.05rem 0.1rem #333;
 }
@@ -194,7 +194,7 @@ body {
     width: 80%;
     flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
+    /* text-align: center; */
   }
 }
 
@@ -296,7 +296,7 @@ h1 {
 .List-div {
   max-width: 60%;
   margin: 3% auto 5% auto;
-  background-color: rgba(245,245,220,0.2)  ;
+  background-color: rgba(245, 245, 220, 0.2);
   border-radius: 5px;
   padding: 0%;
 }
@@ -305,31 +305,27 @@ h1 {
   .List-div {
     max-width: 100%;
     margin: 1% auto 1% auto;
-    background-color: rgba(245,245,220,0.2)  ;
+    background-color: rgba(245, 245, 220, 0.2);
     border-radius: 0px;
     padding: 0%;
   }
   .list-group {
     font-size: 1rem;
   }
-
 }
 
 .list-group {
   font-size: 1.1rem;
 }
 
-input[type=checkbox]:checked + span{
-    text-decoration-line: line-through;
-    opacity: 0.5;
-  }
-
-
+input[type="checkbox"]:checked + span {
+  text-decoration-line: line-through;
+  opacity: 0.5;
+}
 
 /*
 * Drum Kit
 */
-
 
 .a {
   background-image: url("./images/tom1.png");
@@ -365,13 +361,13 @@ input[type=checkbox]:checked + span{
 
 .drum {
   outline: none;
-  border: 10px solid #404B69;
+  border: 10px solid #404b69;
   font-size: 3.5rem;
-  font-family: 'Arvo', cursive;
+  font-family: "Arvo", cursive;
   line-height: 2;
   font-weight: 900;
   color: gray;
-  text-shadow: 3px 0 #DBEDF3;
+  text-shadow: 3px 0 #dbedf3;
   border-radius: 15px;
   display: inline-block;
   width: 120px;
@@ -382,6 +378,75 @@ input[type=checkbox]:checked + span{
 }
 
 .pressed {
-  box-shadow: 0 3px 4px 0 #DBEDF3;
+  box-shadow: 0 3px 4px 0 #dbedf3;
   opacity: 0.5;
+}
+
+/*
+Caroussel
+*/
+
+.box {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  height: 40vh;
+  display: grid;
+  place-items: center;
+}
+
+.slider {
+  width: 100%;
+  max-width: 560;
+  height: 320px;
+  position: relative;
+  overflow: hidden; /* <===  */
+  border-radius: 15px;
+  border: solid 2px gray;
+  background-color: white
+}
+
+.slide {
+  width: 100%;
+  padding: 5px;
+  max-width: 560px;
+  height: 320px;
+  position: absolute;
+  transition: all 0.5s;
+  border-radius: 15px;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.btn-caroussel {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  z-index: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 18px;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: scale(1.1);
+}
+
+.btn-prev {
+  top: 45%;
+  left: -45%;
+}
+
+.btn-next {
+  top: 45%;
+  right: -45%;
 }

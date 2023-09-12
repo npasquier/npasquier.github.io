@@ -39,7 +39,6 @@
       <div class="back-image">
         <header class="d-flex adapt-screen mx-auto">
           <div>
-            <!-- <h3 class="float-md-start mb-0">Cover</h3> -->
             <nav
               class="navbar navbar-expand-lg justify-content-center float-md-end mx-2"
             >
@@ -103,15 +102,76 @@
         <main>
           <div class="p-2">
             <div class="my-5 mx-auto p-3">
-              <h6 class="mb-5">
-                <strong> Welcome to the playground section. </strong>
-              </h6>
+              <h2 class="mb-5">
+                <strong> Wep App Projects </strong>
+              </h2>
+            </div>
+
+            <div
+              class="d-flex flex-col flex-wrap justify-content-between my-5 mx-auto p-3 api-flex-item back-text rounded border adapt-screen"
+            >
+              <div class="flex flex-item col-md-6 d-none d-lg-block box mt-4">
+                <div class="slider">
+                  <div class="slide">
+                    <img src="./images/plant1.png" alt="" />
+                  </div>
+                  <div class="slide">
+                    <img src="./images/plant2.png" alt="" />
+                  </div>
+                  <div class="slide">
+                    <img src="./images/plant3.png" alt="" />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./images/plant4.png"
+                      alt=""
+                      style="border-radius: 15px"
+                    />
+                  </div>
+
+                  <button class="btn-caroussel btn-next">></button>
+                  <button class="btn-caroussel btn-prev"><</button>
+                </div>
+              </div>
+              <div
+                class="flex flex-item p-3 col-md-6 col-sm-12"
+                style="text-align: left"
+              >
+                <h2 class="text-left mb-4">The Plant Watering App</h2>
+                <p>Made with Nextjs/TypeScript, Tailwind and MongoDB.</p>
+                <p>
+                  Hosted on GitHub and Vercel:
+                  <a href="https://plant-app-sigma.vercel.app/">
+                    <strong>Link</strong>
+                  </a>
+                </p>
+
+                <p>
+                  🚨 Watering your lawn for a couple of minutes every evening
+                  can have a detrimental effect .
+                </p>
+
+                <p>
+                  ✅ You need to give your lawn a good soak -- 1-inch of water
+                  -- once or twice a week.
+                </p>
+                <p>
+                  👉 This web app gives a quick and easy way to manage the
+                  watering activity of your outdoor plants given the weekly
+                  weather: 
+                  (i) compose your own garden, (ii) access weekly weather
+                  precipitations, and (iii) keep track of each plant's watering level.
+                </p>
+              </div>
+            </div>
+
+            <div class="my-5 mx-auto p-3">
+              <h1 class="mb-5">
+                <strong> Vanilla JS. </strong>
+              </h1>
               <h6>
-                Feel free to play with some of the vanilla js features I am building during
-                my learning.
-              </h6>
-              <h6>
-                You can also explore my <a href="https://plant-app-sigma.vercel.app/"> <strong> Plant Watering Web App</strong></a> project made with Nextjs/TypeScript, Tailwind and MongoDB -- hosted on GitHub and Vercel.
+                Feel free to play with some of the vanilla js features I am
+                building during my learning.
               </h6>
             </div>
 
@@ -119,8 +179,14 @@
               class="my-5 mx-auto p-3 api-flex-item back-text rounded border adapt-screen"
             >
               <h1>The to-do list</h1>
-              <h6>You can use the to-do list as a memo while browsing the internet.</h6>
-              <h6>But please be advise that it resets at each page refresh!</h6>
+              <h6>
+                You can use the to-do list as a memo while browsing the
+                internet.
+              </h6>
+              <h6>
+                Please be advise that there is no link to a database here -> It
+                resets at each page refresh!
+              </h6>
               <div class="List-div">
                 <div
                   class="flex-column p-4 align-items-center justify-content-center"
@@ -192,14 +258,15 @@
             >
               <h1>Drum 🥁 Kit</h1>
 
-              <p>Boum ! Boum ! Hear that neighbor ?! </p> 
-              
+              <p>Boum ! Boum ! Hear that neighbor ?!</p>
+
               <button
-              onclick="handleKeyboardActivation()"
-              class="btn btn-success"
-            >
-              <strong id="keyboard-active" >Activate Keyboard<strong/>
-            </button>
+                onclick="handleKeyboardActivation()"
+                class="btn btn-success font-weight-bold"
+                id="keyboard-active"
+              >
+                Activate Keyboard
+              </button>
 
               <div class="set">
                 <button class="a drum btn_drum">a</button>
@@ -210,10 +277,7 @@
                 <button class="o drum btn_drum">o</button>
                 <button class="p drum btn_drum">p</button>
               </div>
-
-              
             </div>
-
           </div>
         </main>
 
