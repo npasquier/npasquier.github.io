@@ -1,542 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <title>Nicolas Pasquier | Personal website</title>
+    <link rel="icon" type="image/x-icon" href="images/academic.svg" />
+
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> "shrink-to-fit=no"  is specific to safari -->
-    <meta
-      name="google-site-verification"
-      content="dTR1v6mO5Ulif2IWgYDPAtmtCtBwGNQHEKAiKdgJU1A"
-    />
-    <meta name="description" content="Nicolas Pasquier Website" />
-    <meta name="author" content="Nicolas Pasquier" />
-    <link id="favicon" rel="icon" href="./images/smile.ico" />
-
-    <title>Nicolas Pasquier</title>
-
-    <!-- Bootstrap core CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rancho&family=Reenie+Beanie&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Custom styles for this template -->
-    <link href="styles.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
 
-  <body class="text-center">
-    <div class="d-flex w-100 h-100 mx-auto flex-column">
-      <div class="back-image">
-        <header class="d-flex adapt-screen mx-auto">
-          <div>
-            <nav
-              class="navbar navbar-expand-lg justify-content-center float-md-end mx-2"
-            >
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="desc">
+          <h1>Nicolas Pasquier</h1>
+          <img src="images/profile_picture.png" alt="Logo" />
+          <p>Bordeaux School of Economics & Grenoble Applied Economics Lab</p>
+        </div>
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item py-1 px-1 active">
-                    <a
-                      class="nav-link fw-bold hover-underline-animation"
-                      aria-current="page"
-                      href="#"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li class="nav-item py-1 px-1">
-                    <a
-                      class="nav-link hover-underline-animation"
-                      href="/#publications"
-                      data-target="#publications"
-                      ><span>Publications</span></a
-                    >
-                  </li>
-                  <li class="nav-item py-1 px-1">
-                    <a
-                      class="nav-link hover-underline-animation"
-                      href="/#works"
-                      data-target="#works"
-                      ><span>Working papers</span></a
-                    >
-                  </li>
-                  <li class="nav-item py-1 px-1">
-                    <a
-                      id="nav-playground"
-                      class="nav-link fw-bold hideHeader"
-                      href="playground.html"
-                    >
-                      Playground
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </header>
-        <div class="d-flex flex-row h-75">
-          <div
-            class="d-flex flex-row m-auto p-4 back-text rounded border adapt-screen div-opacity"
+        <p class="view">
+          <a href="mailto:nicolas.pasquier@univ-grenoble-alpes.fr"
+            ><img
+              border="0"
+              alt="Email"
+              src="images/email-logo.png"
+              width="16"
+              height="16"
+            />
+            Email</a
+          ><br />
+          <a href="https://orcid.org/0000-0002-6529-6944"
+            ><img
+              border="0"
+              alt="OrcId"
+              src="images/orcid-logo.png"
+              width="16"
+              height="16"
+            />
+            OrcId</a
+          ><br />
+          <a href="https://www.linkedin.com/in/n-pasquier/"
+            ><img
+              border="0"
+              alt="LinkedIn"
+              src="images/linkedIn-logo.png"
+              width="16"
+              height="16"
+            />
+            LinkedIn</a
+          ><br />
+          <a href="https://github.com/npasquier"
+            ><img
+              border="0"
+              alt="GitHub"
+              src="images/github-logo.png"
+              width="16"
+              height="16"
+            />
+            Github</a
           >
-            <div class="mx-5">
-              <img
-                class="profile-picture-img my-2"
-                src="./images/profile_picture.png"
-                loading="lazy"
-                alt="profile-img"
-              />
+        </p>
+      </header>
+      <section id="index">
+        <p>
+          I am an Post-Doc in Economics at the
+          <a href="https://www.bse.u-bordeaux.fr/"
+            >Bordeaux School of Economics</a
+          >.
+        </p>
+        <p>
+          My main interests are in topics of industrial organization,
+          particularly the strategies adopted by firms when faced with
+          uncertainty. Recent studies cover agricultural and digital sector
+          issues.
+        </p>
 
-              <h1 class="nameFont my-4">I'm Nicolas</h1>
-              <a
-                href="mailto:nicolas.pasquier@univ-grenoble-alpes.fr"
-                aria-label="envelope"
-              >
-                <i class="fa-regular fa-envelope fa-2xl mx-2"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/n-pasquier/"
-                target="_blank"
-                rel="noopener"
-                aria-label="linkedin"
-              >
-                <i class="fa-brands fa-linkedin fa-2xl mx-2"></i>
-              </a>
-            </div>
-            <div class="mx-2 text-start">
-              <div class="my-2">
-                <h5 class="my-4">Welcome to my website!</h5>
-                <p>
-                  I am currently a
-                  <strong>post-doctoral researcher in economics</strong> at
-                  <a class="" href="https://www.bse.u-bordeaux.fr/en/">
-                    Bordeaux School of Economics (BSE)</a
-                  >, and an associate member of
-                  <a
-                    class=""
-                    href="https://gael.univ-grenoble-alpes.fr/?language=en"
-                  >
-                    Grenoble Applied Economics Lab (GAEL)</a
-                  >.
-                </p>
-                <p>
-                  My thesis delves into the
-                  <strong>
-                    theoretical aspects of firm strategies in vertical
-                    relationships when uncertainty arises</strong
-                  >. Subsequent post-doc works explore
-                 issues related to
-                  <strong>agricultural economics</strong> and
-                  <strong>digital economics</strong>.
-                </p>
-                <p class="mt-3">
-                  I also learn <strong>full-stack development</strong> in my
-                  spare time. Some of
-                  my projects are in this
-                  <a href="playground.html"><em>playground section</em></a>. 
-                </p>
-              </div>
+        <p>I am also learning software development in my spare time.</p>
 
-              <div class="row">
-                <div class="col-md-5 my-2">
-                  <div><h5>Interests</h5></div>
-                  <ul class="mb-0">
-                    <li>Industrial Organization</li>
-                    <li>Experimental Economics</li>
-                  </ul>
-                </div>
-                <div class="col-md-7 my-2">
-                  <div><h5>Education</h5></div>
-                  <ul class="ul-edu fa-ul my-0">
-                    <li>
-                      <i class="fa-li fas fa-graduation-cap"></i>
-                      <div>
-                        <p class="mb-0">PhD in Economics, 2019</p>
-                        <p class="institution">University Grenoble-Alpes</p>
-                      </div>
-                    </li>
-                    <li>
-                      <i class="fa-li fas fa-graduation-cap"></i>
-                      <div>
-                        <p class="mb-0">
-                          M2 Empirical and Theoretical Economics
-                        </p>
-                        <p class="institution">University Paris 1</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- First flex item -->
-      <main>
-        <!-- Tentative flex item -->
-        <div class="container my-5">
-          <div class="row">
-            <div
-              class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start"
+        <h3 id="publications">Publications</h3>
+        <ul>
+          <li>
+            <a
+              href="https://link.springer.com/article/10.1007/s11151-023-09941-x"
+              >Decentralization and consumer welfare with substitutes or
+              complements</a
+            >.
+            <br />
+            <em>Review of Industrial Organization</em>, 2024, published online.
+            <button class="abstract" value="decentralization">
+              [Abstract]
+            </button>
+          </li>
+          <li>
+            <a
+              href="https://www.degruyter.com/document/doi/10.1515/bejte-2021-0070/html"
+              >Management turnover, strategic ambiguity and supply incentives</a
             >
-              <h1 id="publications" class="mb-0">Publications</h1>
-            </div>
-            <div class="col-12 col-lg-8">
-              <div class="card text-start p-4 my-2">
-                <div class="card_infos">
-                  <div>
-                    <span>Nicolas Pasquier</span>, <span>Olivier Bonroy</span>,
-                    <span>Alexis Garapin</span>
-                  </div>
-
-                  <span><em>Theory and Decision</em>,</span>
-                  <span> 2022, Vol. 93(4), pp. 585-614.</span>
-                </div>
-                <div class="mb-1 mt-3">
-                  <h5 class="card-title">
-                    Risk aversion and equilibrium selection in a vertical
-                    contracting setting: An experiment
-                  </h5>
-                </div>
-                <div class="card-text">
-                  <p>
-                    The theoretical literature on vertical relationships usually
-                    assumes that beliefs about secret contracts take specific
-                    forms. In a recent paper, Eguia et al. (2018) propose a new
-                    selection criterion that does not impose any restriction on
-                    beliefs. In this article, we extend their criterion by
-                    generalizing it to risk-averse retailers, and we show that
-                    risk aversion modifies the size of the belief subsets that
-                    support each equilibrium. We conduct an experiment which
-                    revisits that of Eguia et al. (2018). We design a new
-                    treatment effect on equilibrium selection depending on the
-                    retailers’ risk sensitivity. Experimental results confirm
-                    the treatment effect: the more sensitivity there is towards
-                    risk, the more the equilibrium played is consistent with
-                    passive beliefs. In addition, extending the Eguia et al.
-                    (2018)'s' criterion to risk-averse retailers improves its
-                    predictive power on the equilibria played, especially for a
-                    population of retailers with moderate to extreme risk
-                    aversion.
-                  </p>
-                </div>
-                <div>
-                  <a
-                    class="btn btn-primary btn-page-header btn-sm"
-                    href="https://doi.org/10.1007/s11238-022-09868-x"
-                    target="_blank"
-                    rel="noopener"
-                    >DOI</a
-                  >
-                </div>
-              </div>
-              <div class="card text-start p-4 my-2">
-                <div class="card_infos">
-                  <div>
-                    <span>Nicolas Pasquier</span>, <span>Pascal Toquebeuf</span>
-                  </div>
-
-                  <span
-                    ><em>The B.E. Journal of Theoretical Economics</em>,</span
-                  >
-                  <span> 2023, Vol. 23 (1), pp. 121-154.</span>
-                </div>
-                <div class="mb-1 mt-3">
-                  <h5 class="card-title">
-                    Management turnover, strategic ambiguity and supply
-                    incentives
-                  </h5>
-                </div>
-                <div class="card-text">
-                  <p>
-                    When a firm appoints a new manager, it reopens the
-                    possibility of new contractual friction with its partners.
-                    We explore strategic ambiguity as a potential for friction
-                    with a supplier. The firm’s new manager probably has fuzzy
-                    expectations about the supplier’s strategy. An optimistic
-                    manager weights favorable strategies more heavily than
-                    detrimental ones, whereas a pessimistic manager does the
-                    opposite. We show that the manager’s degree of optimism is
-                    critical: above a threshold, it can cause the supplier to
-                    change the timing of its contracting and increase its
-                    profits. We also find that this threshold degree of optimism
-                    depends on the degree of product substitution: it is more
-                    stringent with imperfect substitutes than with perfect
-                    substitutes or unrelated goods.
-                  </p>
-                </div>
-                <div>
-                  <a
-                    class="btn btn-primary btn-page-header btn-sm"
-                    href="https://doi.org/10.1515/bejte-2021-0070"
-                    target="_blank"
-                    rel="noopener"
-                    >DOI</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <hr class="dots" />
-
-        <div class="container my-5">
-          <div class="row">
-            <div
-              class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start"
+            (with
+            <a
+              href="https://gael.univ-grenoble-alpes.fr/membres/pascal-toquebeuf"
+              >Pascal Toquebeuf</a
+            >).
+            <br />
+            <em>The B.E. Journal of Theoretical Economics</em>, 2023, Vol. 23
+            (1), pp. 121-154.
+            <button class="abstract" value="management">[Abstract]</button>
+          </li>
+          <li>
+            <a
+              href="https://link.springer.com/article/10.1007/s11238-022-09868-x"
+              >Risk aversion and equilibrium selection in a vertical contracting
+              setting: An experiment</a
             >
-              <h1 id="works" class="mb-0">Working papers</h1>
-            </div>
-            <div class="col-12 col-lg-8">
-              <div class="card text-start p-4 my-2">
-                <div class="card_infos">
-                  <div>
-                    <span>Nicolas Pasquier</span>
-                  </div>
+            (with
+            <a
+              href="https://gael.univ-grenoble-alpes.fr/node/1675/olivier-bonroy"
+              >Olivier Bonroy</a
+            >
+            and
+            <a href="https://gael.univ-grenoble-alpes.fr/membres/alexis-garapin"
+              >Alexis Garapin</a
+            >). <br />
+            <em>Theory and Decision</em>, 2022, Vol. 93(4), pp. 585-614.
+            <button class="abstract" value="selection">[Abstract]</button>
+          </li>
+        </ul>
 
-                  <span
-                    ><em
-                      >Accepted under condition at Review of Industrial
-                      Organization</em
-                    ></span
-                  >
-                </div>
-                <div class="mb-1 mt-3">
-                  <h5 class="card-title">
-                    Decentralization and consumer welfare with substitutes or
-                    complements
-                  </h5>
-                </div>
-                <div class="card-text">
-                  <p>
-                    We study a vertically integrated producer (VIP) that
-                    supplies a downstream firm under price competition. The VIP
-                    may decentralize the final price decision to its downstream
-                    unit; the latter thereby ignores the effect of the output
-                    price on upstream sales. We find that decentralization
-                    benefits the VIP -- irrespective of whether the products are
-                    substitutes or complements. Decentralization also benefits
-                    the consumers when products are substitutes, but it harms
-                    them when the products are complements. Interestingly, when
-                    products are substitutes, decentralization decreases both
-                    output prices despite restoring a double margin on the
-                    downstream unit's sales.
-                  </p>
-                </div>
-                <div>
-                  <a
-                    class="btn btn-primary btn-page-header btn-sm"
-                    href="Papers/Pasquier_2022_RRR.pdf"
-                    target="_blank"
-                    rel="noopener"
-                    >Version Dec. 2022</a
-                  >
+        <h3 id="working-papers">Working Papers</h3>
+        <ul>
+          <li>
+            <a href=""
+              >Multiple agricultural risks and insurance -- Issues, perspectives
+              and illustration for wine-growing</a
+            >
+            (with
+            <a href="https://www.bse.u-bordeaux.fr/membres/cecile-aubert/"
+              >Cécile Aubert</a
+            >,
+            <a
+              href="https://scholar.google.com/citations?user=CiKccNQAAAAJ&hl=fr"
+              >Yann Raineau</a
+            >
+            and
+            <a href="https://www.researchgate.net/profile/Marc-Raynal"
+              >Marc Raynal</a
+            >).
+            <br />
+            <em
+              >R&R at Review of Agricultural, Food and Environmental Studies</em
+            >, Latest Version: September 2023.
+            <button class="abstract" value="multiple-risks">[Abstract]</button>
+          </li>
+          <li>
+            <a href=""
+              >Winners and Losers of Gatekeeper-Induced Consumer Preference
+              Distortion in Promoting Personalized Pricing by Asymmetric
+              Firms</a
+            >
+            (with
+            <a
+              href="https://www.eeg.uminho.pt/pt/_layouts/15/uminho.portaisuoei.ui/pages/userinfo.aspx?p=996"
+              >Rosa Branca Esteves</a
+            >).
+            <br />
+            <em>Submitted</em>, Latest Version: February 2024.
+            <button class="abstract" value="amazon">[Abstract]</button>
+          </li>
+          <li>
+            <a href=""
+              >Two part tariff, demand uncertainty and risk aversion: From
+              theory to experimental evidence</a
+            >
+            (with
+            <a
+              href="https://gael.univ-grenoble-alpes.fr/node/1675/olivier-bonroy"
+              >Olivier Bonroy</a
+            >
+            and
+            <a href="https://gael.univ-grenoble-alpes.fr/membres/alexis-garapin"
+              >Alexis Garapin</a
+            >).
+            <br />
+            <em>Submitted</em>, Latest Version: October 2023.
+            <button class="abstract" value="demand-uncertainty">
+              [Abstract]
+            </button>
+          </li>
+          <li>
+            <a href=""
+              >Promotion of emission-based innovations in the biofuel sector</a
+            >
+            (with <a href="">Stéphane Lemarié</a>).
+            <br />
+            <em>New version soon</em>, Latest Version: September 2023.
+            <button class="abstract" value="colza">[Abstract]</button>
+          </li>
+          <li>
+            <a href=""
+              >Crop insurances and pesticide use: A survey of empirical results
+              with added focus on wine-growing</a
+            >
+            (with
+            <a href="https://www.bse.u-bordeaux.fr/membres/cecile-aubert/"
+              >Cécile Aubert</a
+            >).
+            <br />
+            <em>New version soon</em>, Latest Version: November 2023.
+            <button class="abstract" value="survey">[Abstract]</button>
+          </li>
+        </ul>
 
-                  <a href="Papers/Pasquier_2022_App.pdf">[Supp. appendix]</a>
-                </div>
-              </div>
-              <div class="card text-start p-4 my-2">
-                <div class="card_infos">
-                  <div>
-                    <span>Rosa Branca Esteves</span>,
-                    <span>Nicolas Pasquier</span>
-                  </div>
+        <h3 id="work-in-progress">Works in progress</h3>
+        <ul>
+          <li>
+            <a
+              >Data-sharing in crop insurance:
+              when farmer pessimism can reduce pesticide use</a
+            >.
+            <br />
+            Latest version available upon request.
+            <button class="abstract" value="data-insurance">[Abstract]</button>
+          </li>
+          <li>
+            <a>Threshold public good games with model uncertainty</a>.
+            <br />
+            Paused. Latest version available upon request.
+            <button class="abstract" value="public-game">[Abstract]</button>
+          </li>
+        </ul>
 
-                  <span><em>Submitted</em></span>
-                </div>
-                <div class="mb-1 mt-3">
-                  <h5 class="card-title">
-                    Winners and Losers of Gatekeeper-Induced Consumer Preference
-                    Distortion in Promoting Personalized Pricing by Asymmetric
-                    Firms
-                  </h5>
-                </div>
-                <div class="card-text">
-                  <p>
-                    We present a model of duopoly competition in a marketplace
-                    with a Hotelling segment of consumers, where two business
-                    users (firms) have access to raw consumer data. The firms
-                    can choose between personalized prices (PP), using a costly
-                    personalized program device provided by the marketplace, or
-                    uniform prices at no additional cost. One firm has a higher
-                    level of experience in utilizing consumer data, resulting in
-                    a lower cost of price personalization (PP device cost). In
-                    order to promote its personalized program device, the
-                    marketplace may have an incentive to distort consumer
-                    preferences from a uniform to a triangular distribution. Our
-                    findings indicate that the marketplace is more likely to
-                    distort consumer preferences under specific conditions. This
-                    occurs when there is moderate asymmetry in experience
-                    between the firms and a high tariff for the program, or when
-                    there is weak asymmetry and a moderate program tariff. In
-                    these parameter regions, the distortion of consumer
-                    preferences negatively impact the profits of the sellers
-                    while benefiting the consumers. These insights contribute to
-                    a better understanding of the dynamics of digital
-                    marketplaces and have implications for policymakers and
-                    competition authorities
-                  </p>
-                </div>
-                <div>
-                  <a
-                    class="btn btn-primary btn-page-header btn-sm"
-                    href="Papers/TriDis_and_PP.pdf"
-                    target="_blank"
-                    rel="noopener"
-                    >Version June 2023</a
-                  >
-                </div>
-              </div>
-              <div class="card text-start p-4 my-2">
-                <div class="card_infos">
-                  <div>
-                    <span>Olivier Bonroy</span>, <span>Alexis Garapin</span>,
-                    <span>Nicolas Pasquier</span>
-                    <br />
-                    <span><em>Submitted</em></span>
-                  </div>
-                </div>
-                <div class="mb-1 mt-3">
-                  <h5 class="card-title">
-                    Two part tariff, demand uncertainty and risk aversion: From
-                    theory to experimental evidence
-                  </h5>
-                </div>
-                <div class="card-text">
-                  <p>
-                    In an uncertain demand environment, Rey and Tirole (1986)
-                    show that the per unit price of a two-part tariff may have
-                    insurance properties, insofar as it transfers risk from
-                    downstream firms to upstream firms. In this paper, we test
-                    this result in an experiment where the role of the subjects
-                    is controlled according to their elicited risk aversion. The
-                    role of the downstream firms is then held by the most risk
-                    averse subjects. When the probability of meeting positive
-                    demand is high, the experimental results confirm the the-
-                    oretical prediction: the per unit price has insurance
-                    properties such that it is higher than in a certain demand
-                    environment and the part of the rent extracted by the fixed
-                    part is lower. However, this insurance property does not
-                    stand in the experimental results when the probability of
-                    meeting positive demand is low. The results show that in
-                    such cases there is insurance demand, and that high unit
-                    prices are therefore accepted, but that this insurance
-                    demand is not satisfied enough.
-                  </p>
-                </div>
-                <div>
-                  <a
-                    class="btn btn-primary btn-page-header btn-sm"
-                    href="Papers/Bonroy_et_al_2023.pdf"
-                    target="_blank"
-                    rel="noopener"
-                    >Version July 2023</a
-                  >
-                </div>
-              </div>
-              <div class="card text-start p-4 my-2">
-                <div class="card_infos">
-                  <div>
-                    <span>Stéphane Lemarié</span>, <span>Nicolas Pasquier</span>
-                  </div>
-                </div>
-                <div class="mb-1 mt-3">
-                  <h5 class="card-title">
-                    Promotion of emission-based innovations in the biofuel
-                    sector
-                  </h5>
-                </div>
-                <div class="card-text">
-                  <p>
-                    Innovations leading to the reduction of GHG emissions
-                    constitute an important lever in the fight against pollution
-                    and climate change. These innovations however often occupy
-                    niche markets. The economic literature mainly delivers
-                    insights on the promotion of innovations reducing the
-                    production costs of renewable inputs. The present focuses on
-                    emission-based innoavtions and compares the effects of
-                    various regulations on the adoption of these innovations.
-                    The analysis builds on a theoretical partial equilibrium
-                    model representing a fuel industry that mixes biofuels with
-                    fossil fuels, in the presence of an upstream innovator who
-                    has developed an innovation reducing the level of biofuel
-                    GHG emissions. We show that the fuel industry has no
-                    incentive to adopt emissions-based innovation if there is no
-                    regulation or if the regulation is on quantities (e.g.
-                    quota). This first result therefore shows a limit to this
-                    last widespread regulation which usually promotes the
-                    adoption of innovations based on costs. We then show that
-                    the industry can adopt emissions innovation with an excise
-                    tax, or an emission standard (including a maximum fuel
-                    emission level final). With a tax, such adoption is only
-                    beneficial with a sufficienlty high tax rate or an
-                    innovation that sufficiently reduces emissions. On the
-                    contrary, with a standard, such an adoption is beneficial
-                    with sufficiently strict standards and if the innovation
-                    reduces slightly the emissions . This last counterintuitive
-                    result implies that standards and taxes do not promote the
-                    same level of innovation. Finally, we show that standards
-                    promote both emission-based and cost-based innovations.
-                  </p>
-                </div>
-                <div>
-                  <a>[New draft available soon]</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <!-- Copyright -->
-      <footer class="mastfoot mt-auto">
-        <div class="institution">
-          <p>Copyright npasquier</p>
-        </div>
+        <h3 id="web-apps">Web app projects (in progress)</h3>
+
+        <ul>
+          <li>
+            <a href="https://scholar-filter.vercel.app/">
+              https://scholar-filter.vercel.app/
+            </a>
+            <br />
+            Techno: Nextjs (Typescript, Tailwind, Nodejs), mySQL on AWS.
+          </li>
+          <li>
+            <a href="https://plant-watering-app.vercel.app/">
+              https://plant-watering-app.vercel.app/
+            </a>
+            <br />
+            Techno: Nextjs (Typescript, Tailwind, Nodejs), mongoDB on Atlas. Built on two APIs.
+          </li>
+          <li>
+            <a href="https://visibio.vercel.app/">
+              https://visibio.vercel.app/
+            </a>
+            <br />
+            Techno: Nextjs (Typescript, Tailwind, ObservablePlot-D3). Built on open source data.
+          </li>
+        </ul>
+      </section>
+      <footer>
+        <p>
+          <small>by npasquier | lastest update: Feb. 2024 </small>
+        </p>
       </footer>
     </div>
-
-    <!--  JavaScript
-    ================================================== -->
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
-      crossorigin="anonymous"
-    ></script>
-
-    <script type="text/javascript" src="script_nav.js"></script>
-    <script type="text/javascript" src="scrip_profile-picture.js"></script>
-
-    <script
-      src="https://kit.fontawesome.com/ad394177ef.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="javascripts/scale.fix.js"></script>
+    <script src="javascripts/dynamic-abstract.js"></script>
   </body>
 </html>
