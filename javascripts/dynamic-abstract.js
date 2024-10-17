@@ -33,7 +33,7 @@ document.querySelectorAll(".abstract").forEach((elem) =>
     <h1>Multiple agricultural risks and insurance -- Issues, perspectives and illustration for wine-growing.</h1>
     <h4> with Cécile Aubert, Yann Raineau and Marc Raynal. </h3>
     <h3> <em>R&R at Review of Agricultural, Food and Environmental Studies</em>, Latest Version: September 2023.</h3>
-    <p><small>Draft link: <a href=""> ... </a></small></p>
+    <p><small>Draft link: <a href="https://doi.org/10.1007/s41130-024-00217-w"> https://doi.org/10.1007/s41130-024-00217-w </a></small></p>
     <br>
     <p> <strong> Abstract: </strong> We investigate to what extent crop insurance can address the multiple risks faced by
     agricultural producers. Climatic, disease, technological and financial risks make insurance
