@@ -64,7 +64,12 @@ document.querySelectorAll(".abstract").forEach((elem) =>
     <h3> <em>Submitted</em>, Latest Version: October 2023.</h3>
     <p><small>Draft link: <a href=""> ... </a></small></p>
     <br>
-    <p> <strong> Abstract: </strong> In an uncertain demand environment, Rey and Tirole (1986) show that the per unit price of a two-part tariff may have insurance properties, insofar as it transfers risk from downstream firms to upstream firms. In this paper, we test this result in an experiment where the role of the subjects is controlled according to their elicited risk aversion. The role of the downstream firms is then held by the most risk averse subjects. When the probability of meeting positive demand is high, the experimental results confirm the the- oretical prediction: the per unit price has insurance properties such that it is higher than in a certain demand environment and the part of the rent extracted by the fixed part is lower. However, this insurance property does not stand in the experimental results when the probability of meeting positive demand is low. The results show that in such cases there is insurance demand, and that high unit prices are therefore accepted, but that this insurance demand is not satisfied enough.</p>
+    <p> <strong> Abstract: </strong> In an uncertain demand environment, the per-unit price of a two-part tariff can have
+insurance properties, insofar as it transfers risk from risk-averse downstream firms to
+less risk averse upstream firms, and compensation properties insofar as it compensates
+downstream firms for lessened attractiveness of trade. Both properties have opposite
+effects such as the first one can increase double marginalization and the second one can
+mitigate it. This paper provides experimental evidence of both properties.</p>
     <a href="./index.html"> [Back] </a>
     `;
     } else if (e.target.value === "colza") {
