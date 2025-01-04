@@ -61,7 +61,7 @@ document.querySelectorAll(".abstract").forEach((elem) =>
       document.getElementById("index").innerHTML = `
     <h1>Two part tariff, demand uncertainty and risk aversion: From theory to experimental evidence.</h1>
     <h4> with Olivier Bonroy and Alexis Garapin. </h3>
-    <h3> <em>Submitted</em>, Latest Version: October 2023.</h3>
+    <h3> <em>Accepted</em>, Latest Version: November 2024.</h3>
     <p><small>Draft link: <a href=""> ... </a></small></p>
     <br>
     <p> <strong> Abstract: </strong> In an uncertain demand environment, the per-unit price of a two-part tariff can have
@@ -91,16 +91,6 @@ mitigate it. This paper provides experimental evidence of both properties.</p>
     <p><small>Draft link: <a href=""> ... </a></small></p>
     <br>
     <p> <strong> Abstract: </strong> Crop insurance is a major component of the U.S. agricultural policy toolbox. On the contrary, only a small minority of E.U. farmers hold a subsidized insurance policy. We contrast the existing systems of subsidized insurance, that cover different risks. Interestingly, these different schemes give rise to different incentives for farmers to preserve the environment, in terms of adaptation, land use, and pesticide use. We focus on this latter aspect of the moral hazard problem and summarize existing empirical results. Apparently contradictory or inconclusive results can be related to the insurance system and crops under study. We discuss existing evidence about the impact on farmers' choices of green insurance -- an insurance contract conditional on pre-specified environmentally-friendly farmer behaviors. We offer a more in-depth survey for wine-growing, where pesticides are very inexpensive compared to the end-product, the extensive margin is quasi-null, and climatic and pest risks are correlated.</p>
-    <a href="./index.html"> [Back] </a>
-    `;
-    } else if (e.target.value === "data-insurance") {
-      document.getElementById("index").innerHTML = `
-    <h1>Data-sharing in crop insurance:
-    when farmer pessimism can reduce pesticide use.</h1>
-    <h3> <em>Available soon</em>, Latest Version: January 2024.</h3>
-    <p><small>Draft link: <a href=""> ... </a></small></p>
-    <br>
-    <p> <strong> Abstract: </strong> Coming soon.</p>
     <a href="./index.html"> [Back] </a>
     `;
     } else if (e.target.value === "public-game") {
