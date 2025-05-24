@@ -47,23 +47,6 @@ document.querySelectorAll(".abstract").forEach((elem) =>
     designed to reduce treatments thanks to a conditional insurance.</p>
     <a href="./index.html"> [Back] </a>
     `;
-    } else if (e.target.value === "amazon") {
-      document.getElementById("index").innerHTML = `
-    <h1>Winners and Losers of Gatekeeper-Induced Consumer Preference Distortion in Promoting Personalized Pricing.</h1>
-    <h4> with Rosa Branca Esteves. </h3>
-    <h3> <em>Submitted</em>, Latest Version: February 2024.</h3>
-    <p><small>Draft link: <a href=""> ... </a></small></p>
-    <br>
-    <p> <strong> Abstract: </strong> We develop a model of duopoly competition on a gatekeeper platform, where firms choose between personalized pricing (PP) and uniform pricing (UP). 
-Adopting PP requires firms to pay a per-consumer fee to the platform for access to pricing tools. We show that the platform actively reshapes market conditions to increase PP adoption.
-Starting from a setting with uniformly distributed consumer preferences (&beta; = 0), firms adopt PP only if fees are low.
-Anticipating this, the platform manipulates consumer preferences via biased recommendation algorithms -- like increased brand mix -- weakening consumer loyalty.
-This shifts the distribution toward a more triangular shape (&beta; &gt; 0), where more consumers cluster around the market center, intensifying price competition under UP.
-Firms therefore face greater pressure to use PP, ensuring that they pay the platform’s fee. However, the platform does not push brand mixing to the extreme (&beta; = 1). 
-Instead, it selects an intermediate level (&beta; &approx; 0.5) that maximizes its revenue: disloyalty is high enough to make PP attractive for firms but not so high that it erodes its profitability. This manipulation reduces firm profits and consumer surplus while boosting platform revenue. 
-Our findings shed light on hidden platform strategies under the current digital market regulation.</p>
-    <a href="./index.html"> [Back] </a>
-    `;
     } else if (e.target.value === "demand-uncertainty") {
       document.getElementById("index").innerHTML = `
     <h1>Two part tariff, demand uncertainty and risk aversion: From theory to experimental evidence.</h1>
@@ -79,15 +62,6 @@ effects such as the first one can increase double marginalization and the second
 mitigate it. This paper provides experimental evidence of both properties.</p>
     <a href="./index.html"> [Back] </a>
     `;
-    } else if (e.target.value === "public-game") {
-      document.getElementById("index").innerHTML = `
-    <h1>Threshold public good games with model uncertainty.</h1>
-    <h3> <em>Available soon</em>, Latest Version: April 2022.</h3>
-    <p><small>Draft link: <a href=""> ... </a></small></p>
-    <br>
-    <p> <strong> Abstract: </strong> Various collective action problems can be described as discrete public good games with a threshold. In such games, a public good is provided when total contributions exceed a threshold. Yet, the latter is often not known with certainty because multiple models may predict its true value. We derive equilibria when players are either aware or ignorant about which model to pick. In other words, ambiguity may arise as a second layer of uncertainty (ignorance of which model to pick) in addition to risk which constitutes the first layer of uncertainty (each model only predicts the true threshold). When the contribution cost is sufficiently low, our result contrasts the existing literature: (i) the ignorant players contribute more than the aware players, and (ii) ignorance triggers a ”ratchet effect” yielding a minimum number of ignorant players to contribute.</p>
-    <a href="./index.html"> [Back] </a>
-    `;
-    }
+    } 
   })
 );
