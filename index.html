@@ -1,154 +1,737 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Nicolas Pasquier | Economist & Researcher</title>
-    <link rel="icon" type="image/x-icon" href="images/academic.svg" />
-    <link rel="stylesheet" href="./stylesheets/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
       content="Nicolas Pasquier - Economics researcher at INRAE-UMR GAEL, specializing in industrial organization and uncertainty."
     />
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <style>
+      :root {
+        /* Original colors */
+        --color-text: #2a2a2a;
+        --color-text-secondary: #555;
+        --color-text-light: #777;
+        --color-bg-white: #ffffff;
+        --color-bg-alt: #f0f3ee;
+        --color-border: #d6dbd3;
+        --color-border-light: #e3e7e0;
+        --color-navbar: #4a5d4a;
+        --color-accent: #5a7a5a;
+
+        /* Decorative blobs */
+        --color-blob: #c5d4b8;
+        --color-blob-warm: #d4dcc8;
+
+        --font-serif: 'Crimson Text', 'Georgia', serif;
+        --font-sans:
+          'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+        --content-width: 820px;
+        --section-pad-y: 3.5rem;
+        --section-pad-x: 1.5rem;
+        --transition-fast: 0.15s ease;
+        --transition-base: 0.3s ease;
+        --transition-slow: 0.45s ease;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-sans);
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--color-text);
+        background-color: var(--color-bg-white);
+        -webkit-font-smoothing: antialiased;
+        opacity: 0;
+        animation: fadeIn 0.5s ease forwards;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-serif);
+        margin: 0;
+        font-weight: 600;
+        line-height: 1.3;
+        color: var(--color-text);
+      }
+      p {
+        margin: 0 0 0.75rem;
+      }
+      a {
+        color: var(--color-text);
+        text-decoration: none;
+        transition: color var(--transition-fast);
+      }
+      a:hover {
+        color: #000;
+      }
+
+      .section {
+        width: 100%;
+        padding: var(--section-pad-y) var(--section-pad-x);
+      }
+      .section--white {
+        background-color: var(--color-bg-white);
+      }
+      .section--alt {
+        background-color: var(--color-bg-alt);
+      }
+      .section__inner {
+        max-width: var(--content-width);
+        margin: 0 auto;
+      }
+
+      /* Navbar */
+      .navbar {
+        width: 100%;
+        padding: 0.75rem var(--section-pad-x);
+        border-bottom: 1px solid var(--color-border);
+        background-color: var(--color-bg-alt);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .navbar__inner {
+        max-width: var(--content-width);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .navbar__name {
+        font-family: var(--font-serif);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--color-navbar);
+        letter-spacing: -0.01em;
+        text-decoration: none;
+      }
+      .navbar__name:hover {
+        color: var(--color-text);
+      }
+      .navbar__links {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .navbar__link {
+        display: flex;
+        align-items: center;
+        padding: 0.3rem;
+        border-radius: 4px;
+        transition:
+          background-color var(--transition-fast),
+          transform var(--transition-fast);
+      }
+      .navbar__link:hover {
+        background-color: rgba(0, 0, 0, 0.06);
+        transform: translateY(-1px);
+      }
+      .navbar__link img {
+        width: 16px;
+        height: 16px;
+        opacity: 0.55;
+        transition: opacity var(--transition-fast);
+      }
+      .navbar__link:hover img {
+        opacity: 0.9;
+      }
+
+      /* ========================================
+         INTRO
+         ======================================== */
+      .intro {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+      .intro__inner {
+        max-width: var(--content-width);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 2.5rem;
+        align-items: start;
+        animation: slideUp 0.6s ease 0.1s both;
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .intro__left {
+        text-align: center;
+        padding-top: 0.25rem;
+      }
+
+      /* Photo frame — simulates a physical photograph stuck on a file */
+      .profile-frame {
+        position: relative;
+        width: 195px;
+        margin: 0 auto 0.85rem;
+        /* Slight casual tilt like a pinned photo */
+        transform: rotate(-1.5deg);
+        transition: transform var(--transition-base);
+      }
+      .profile-frame:hover {
+        transform: rotate(0deg) translateY(-2px);
+      }
+
+      /* The "printed photo" — white border like a real photograph */
+      .profile-photo-card {
+        position: relative;
+        z-index: 1;
+        background: #fff;
+        padding: 7px 7px 22px 7px;
+        border-radius: 2px;
+        box-shadow:
+          0 2px 8px rgba(0, 0, 0, 0.1),
+          0 1px 3px rgba(0, 0, 0, 0.08),
+          1px 2px 12px rgba(0, 0, 0, 0.06);
+      }
+
+      .profile-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 1px;
+        object-fit: cover;
+      }
+
+      /* Tape strip — sits across the top of the photo */
+      .tape {
+        position: absolute;
+        z-index: 3;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%) rotate(1.5deg);
+        width: 72px;
+        height: 22px;
+        background: linear-gradient(
+          180deg,
+          rgba(220, 215, 195, 0.75) 0%,
+          rgba(210, 205, 185, 0.65) 100%
+        );
+        border-radius: 1px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+        /* Simulate translucent tape texture */
+        backdrop-filter: blur(0.5px);
+      }
+      /* Subtle tape edges */
+      .tape::before,
+      .tape::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: rgba(0, 0, 0, 0.04);
+      }
+      .tape::before {
+        left: 0;
+      }
+      .tape::after {
+        right: 0;
+      }
+
+      .intro__affiliation {
+        font-size: 0.85rem;
+        color: var(--color-text-secondary);
+        margin-bottom: 0.1rem;
+        line-height: 1.4;
+      }
+      .intro__location {
+        font-size: 0.8rem;
+        color: var(--color-text-light);
+      }
+
+      .intro__welcome {
+        font-family: var(--font-serif);
+        font-size: 1.65rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--color-navbar);
+      }
+      .intro__text {
+        font-family: var(--font-serif);
+        font-size: 1.12rem;
+        line-height: 1.8;
+        color: var(--color-text);
+      }
+      .intro__text p:last-of-type {
+        margin-bottom: 0;
+      }
+      .intro__text a {
+        color: var(--color-accent);
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-underline-offset: 2px;
+        transition: text-decoration-color var(--transition-fast);
+      }
+      .intro__text a:hover {
+        text-decoration-color: var(--color-accent);
+      }
+
+      .research-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.25rem;
+      }
+      .research-tag {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--color-navbar);
+        padding: 0.3rem 0.75rem;
+        background-color: rgba(74, 93, 74, 0.08);
+        border-radius: 20px;
+      }
+
+      .section-heading {
+        font-size: 1.45rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.65rem;
+        border-bottom: 2px solid var(--color-navbar);
+        color: var(--color-navbar);
+      }
+
+      /* Publications */
+      .publication-item {
+        margin-bottom: 0;
+        opacity: 0;
+        animation: fadeInItem 0.4s ease forwards;
+      }
+      @keyframes fadeInItem {
+        to {
+          opacity: 1;
+        }
+      }
+      .publication-item:nth-child(1) {
+        animation-delay: 0.3s;
+      }
+      .publication-item:nth-child(2) {
+        animation-delay: 0.38s;
+      }
+      .publication-item:nth-child(3) {
+        animation-delay: 0.46s;
+      }
+      .publication-item:nth-child(4) {
+        animation-delay: 0.54s;
+      }
+      .publication-item:nth-child(5) {
+        animation-delay: 0.62s;
+      }
+      .publication-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.65rem;
+        padding: 0.9rem 0;
+        cursor: pointer;
+        border-bottom: 1px solid var(--color-border-light);
+        user-select: none;
+        transition: background-color var(--transition-fast);
+      }
+      .publication-header:hover {
+        background-color: rgba(0, 0, 0, 0.012);
+      }
+      .publication-item:last-child .publication-header {
+        border-bottom: none;
+      }
+      .pub-chevron {
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        margin-top: 0.2rem;
+        transition: transform var(--transition-base);
+        color: var(--color-text-light);
+      }
+      .publication-item.expanded .pub-chevron {
+        transform: rotate(90deg);
+        color: var(--color-text);
+      }
+      .pub-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .publication-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 0.25rem;
+        color: var(--color-text);
+      }
+      .publication-meta {
+        font-size: 0.9rem;
+        color: var(--color-text-secondary);
+        line-height: 1.5;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+      }
+      .meta-authors a {
+        color: var(--color-accent);
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-underline-offset: 2px;
+        transition:
+          text-decoration-color var(--transition-fast),
+          color var(--transition-fast);
+      }
+      .meta-authors a:hover {
+        color: var(--color-navbar);
+        text-decoration-color: var(--color-navbar);
+      }
+      .meta-sep {
+        margin: 0 0.55rem;
+        color: var(--color-navbar);
+        font-weight: 600;
+        font-size: 0.9em;
+        opacity: 0.9;
+      }
+      .meta-journal {
+        font-style: italic;
+        color: var(--color-text-secondary);
+      }
+      .meta-year {
+        color: var(--color-text-light);
+      }
+      .meta-award {
+        font-size: 0.82rem;
+        color: var(--color-text-light);
+      }
+      .meta-award a {
+        color: var(--color-text-light);
+        transition: color var(--transition-fast);
+      }
+      .meta-award a:hover {
+        color: var(--color-text-secondary);
+      }
+      .publication-body {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height var(--transition-slow) ease,
+          opacity var(--transition-base);
+        opacity: 0;
+      }
+      .publication-item.expanded .publication-body {
+        opacity: 1;
+      }
+      .publication-body-inner {
+        padding: 0.6rem 0 1rem 1.5rem;
+        border-bottom: 1px solid var(--color-border-light);
+      }
+      .publication-item:last-child .publication-body-inner {
+        border-bottom: none;
+      }
+      .abstract-text {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        color: var(--color-text-secondary);
+        margin-bottom: 0.75rem;
+        padding-left: 0.75rem;
+        border-left: 2px solid var(--color-border);
+      }
+      .paper-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 0.5rem;
+      }
+      .paper-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--color-navbar);
+        padding: 0.3rem 0.6rem;
+        border: 1px solid var(--color-border);
+        border-radius: 3px;
+        transition: all var(--transition-fast);
+      }
+      .paper-link:hover {
+        color: #fff;
+        border-color: var(--color-navbar);
+        background-color: var(--color-navbar);
+      }
+      .paper-link svg {
+        width: 11px;
+        height: 11px;
+      }
+      .working-papers .publication-header {
+        cursor: default;
+      }
+      .working-papers .publication-header:hover {
+        background-color: transparent;
+      }
+      .working-papers .pub-chevron {
+        display: none;
+      }
+      .publication-status {
+        font-size: 0.82rem;
+        color: var(--color-text-light);
+        font-style: italic;
+      }
+
+      .site-footer {
+        text-align: center;
+        padding: 1.5rem var(--section-pad-x);
+        font-size: 0.85rem;
+        color: var(--color-text-light);
+        border-top: 1px solid var(--color-border);
+      }
+
+      @media screen and (max-width: 600px) {
+        :root {
+          --section-pad-y: 2.25rem;
+          --section-pad-x: 1rem;
+        }
+        body {
+          font-size: 14px;
+        }
+        .navbar {
+          padding: 0.55rem var(--section-pad-x);
+        }
+        .navbar__name {
+          font-size: 0.95rem;
+        }
+        .navbar__link img {
+          width: 15px;
+          height: 15px;
+        }
+        .intro {
+          padding-top: 2rem;
+          padding-bottom: 1.75rem;
+        }
+        .intro__inner {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+        .intro__left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .profile-frame {
+          width: 160px;
+        }
+        .intro__welcome {
+          font-size: 1.3rem;
+          text-align: center;
+        }
+        .intro__text {
+          font-size: 0.95rem;
+        }
+        .research-tags {
+          justify-content: center;
+        }
+        .section-heading {
+          font-size: 1.2rem;
+        }
+        .publication-title {
+          font-size: 0.95rem;
+        }
+        .publication-meta {
+          font-size: 0.82rem;
+        }
+        .abstract-text {
+          font-size: 0.85rem;
+          line-height: 1.55;
+        }
+        .publication-body-inner {
+          padding-left: 0.5rem;
+        }
+      }
+      @media print {
+        .section--alt {
+          background-color: white;
+        }
+        .pub-chevron {
+          display: none;
+        }
+        .publication-body {
+          max-height: none !important;
+          opacity: 1 !important;
+        }
+        .publication-item {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <div class="header-content">
-          <h1>Nicolas Pasquier</h1>
-          <div class="profile-image-wrapper">
-            <img
-              src="images/profile-pic2.jpg"
-              alt="Nicolas Pasquier"
-              class="profile-image"
-            />
-          </div>
-        </div>
-
-        <p class="affiliation">INRAE-UMR GAEL</p>
-        <p class="location">Grenoble, France</p>
-
-        <nav class="contact-links">
-          <a
-            href="/cdn-cgi/l/email-protection#7816111b1714190b5608190b090d111d0a380d551a170a1c1d190d00561e0a"
-            class="contact-link"
-          >
-            <img src="images/email-logo.png" alt="" width="16" height="16" />
-            <span>Email</span>
-          </a>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="navbar__inner">
+        <a href="#" class="navbar__name">Nicolas Pasquier</a>
+        <div class="navbar__links">
+          <a href="#" class="navbar__link" title="Email"
+            ><img src="images/email-logo.png" alt="Email"
+          /></a>
           <a
             href="https://orcid.org/0000-0002-6529-6944"
-            class="contact-link"
+            class="navbar__link"
             target="_blank"
             rel="noopener"
-          >
-            <img src="images/orcid-logo.png" alt="" width="16" height="16" />
-            <span>OrcId</span>
-          </a>
+            title="OrcId"
+            ><img src="images/orcid-logo.png" alt="OrcId"
+          /></a>
           <a
             href="https://www.linkedin.com/in/n-pasquier/"
-            class="contact-link"
+            class="navbar__link"
             target="_blank"
             rel="noopener"
-          >
-            <img src="images/linkedIn-logo.png" alt="" width="16" height="16" />
-            <span>LinkedIn</span>
-          </a>
+            title="LinkedIn"
+            ><img src="images/linkedIn-logo.png" alt="LinkedIn"
+          /></a>
           <a
             href="https://github.com/npasquier"
-            class="contact-link"
+            class="navbar__link"
             target="_blank"
             rel="noopener"
-          >
-            <img src="images/github-logo.png" alt="" width="16" height="16" />
-            <span>Github</span>
-          </a>
-        </nav>
-
-        <div class="research-interests">
-          <h4>Research Interests</h4>
-          <ul>
-            <li>Industrial Organization</li>
-            <li>Agricultural Economics</li>
-            <li>Digital Economics</li>
-          </ul>
+            title="Github"
+            ><img src="images/github-logo.png" alt="Github"
+          /></a>
         </div>
-      </header>
+      </div>
+    </nav>
 
-      <main>
-        <section class="intro">
-          <p>
-            I am a junior researcher in economics at
-            <a href="https://inrae.fr" target="_blank" rel="noopener">INRAE</a>,
-            within the
-            <a
-              href="https://gael.univ-grenoble-alpes.fr"
-              target="_blank"
-              rel="noopener"
-              >GAEL</a
-            >
-            research unit in Grenoble, France.
-          </p>
-          <p>
-            I started my research with a broad interest in industrial
-            organization (vertical relationships, digital platforms, and
-            information frictions). I now apply applied-theory tools to study
-            the digitalization of the agricultural sector, focusing on how data
-            strategies shape firm behavior and market outcomes.
-          </p>
-        </section>
-
-        <section class="publications-section">
-          <h2>Publications</h2>
-
-          <article class="publication-item">
-            <h3 class="publication-title">
+    <!-- INTRO -->
+    <div class="section section--white intro">
+      <div class="intro__inner">
+        <div class="intro__left">
+          <div class="profile-frame">
+            <!-- Tape strip -->
+            <div class="tape"></div>
+            <!-- Photo card with white border -->
+            <div class="profile-photo-card">
+              <img
+                src="images/profile-pic2.jpg"
+                alt="Nicolas Pasquier"
+                class="profile-image"
+              />
+            </div>
+          </div>
+          <p class="intro__affiliation">INRAE-UMR GAEL</p>
+          <p class="intro__location">Grenoble, France</p>
+        </div>
+        <div>
+          <h2 class="intro__welcome">Welcome!</h2>
+          <div class="intro__text">
+            <p>
+              I am a junior researcher in economics at
+              <a href="https://inrae.fr" target="_blank" rel="noopener">INRAE</a
+              >, within the
               <a
-                href="https://www.sciencedirect.com/science/article/pii/S0165176525000084"
+                href="https://gael.univ-grenoble-alpes.fr"
                 target="_blank"
                 rel="noopener"
+                >GAEL</a
               >
+              research unit in Grenoble, France.
+            </p>
+            <p>
+              I started my research with a broad interest in industrial
+              organization (vertical relationships and information frictions). I
+              now apply applied-theory tools to study the digitalization of the
+              agricultural sector, focusing on how data-driven strategies shape
+              firm behavior and market outcomes.
+            </p>
+          </div>
+          <div class="research-tags">
+            <span class="research-tag">Industrial Organization</span>
+            <span class="research-tag">Agricultural Economics</span>
+            <span class="research-tag">Digital Economics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="section section--alt">
+      <div class="section__inner">
+        <h2 class="section-heading">Publications</h2>
+
+        <article class="publication-item" data-has-abstract="true">
+          <div
+            class="publication-header"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">
                 Two-part tariff, demand uncertainty and double marginalization:
                 An experiment
-              </a>
-            </h3>
-            <p class="publication-authors">
-              with
-              <a
-                href="https://gael.univ-grenoble-alpes.fr/en/olivier-bonroy"
-                target="_blank"
-                rel="noopener"
-                >O. Bonroy</a
-              >
-              and
-              <a
-                href="https://gael.univ-grenoble-alpes.fr/membres/alexis-garapin"
-                target="_blank"
-                rel="noopener"
-                >A. Garapin</a
-              >
-            </p>
-            <p class="publication-venue">
-              <em>Economics Letters</em>, 2025.
-              <button
-                class="abstract-toggle"
-                data-abstract="demand-uncertainty"
-                aria-expanded="false"
-              >
-                [Abstract]
-              </button>
-            </p>
-            <div class="abstract-content" id="abstract-demand-uncertainty">
-              <p>
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-authors"
+                  >with
+                  <a
+                    href="https://gael.univ-grenoble-alpes.fr/en/olivier-bonroy"
+                    target="_blank"
+                    rel="noopener"
+                    >O. Bonroy</a
+                  >
+                  and
+                  <a
+                    href="https://gael.univ-grenoble-alpes.fr/membres/alexis-garapin"
+                    target="_blank"
+                    rel="noopener"
+                    >A. Garapin</a
+                  ></span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-journal">Economics Letters</span>
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-year">2025</span>
+              </div>
+            </div>
+          </div>
+          <div class="publication-body">
+            <div class="publication-body-inner">
+              <p class="abstract-text">
                 In an uncertain demand environment, the per-unit price of a
                 two-part tariff can have insurance properties, insofar as it
                 transfers risk from risk-averse downstream firms to less risk
@@ -159,55 +742,87 @@
                 mitigate it. This paper provides experimental evidence of both
                 properties.
               </p>
+              <div class="paper-links">
+                <a
+                  href="https://www.sciencedirect.com/science/article/pii/S0165176525000084"
+                  class="paper-link"
+                  target="_blank"
+                  rel="noopener"
+                  >Paper
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" /></svg
+                ></a>
+              </div>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="publication-item">
-            <h3 class="publication-title">
-              <a
-                href="https://doi.org/10.1007/s41130-024-00217-w"
-                target="_blank"
-                rel="noopener"
-              >
+        <article class="publication-item" data-has-abstract="true">
+          <div
+            class="publication-header"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">
                 Multiple agricultural risks and insurance — Issues, perspectives
                 and illustration for wine-growing
-              </a>
-            </h3>
-            <p class="publication-authors">
-              with
-              <a
-                href="https://www.bse.u-bordeaux.fr/membres/cecile-aubert/"
-                target="_blank"
-                rel="noopener"
-                >C. Aubert</a
-              >,
-              <a
-                href="https://scholar.google.com/citations?user=CiKccNQAAAAJ&hl=fr"
-                target="_blank"
-                rel="noopener"
-                >Y. Raineau</a
-              >
-              and
-              <a
-                href="https://www.researchgate.net/profile/Marc-Raynal"
-                target="_blank"
-                rel="noopener"
-                >M. Raynal</a
-              >
-            </p>
-            <p class="publication-venue">
-              <em>Review of Agricultural, Food and Environmental Studies</em>,
-              2024.
-              <button
-                class="abstract-toggle"
-                data-abstract="multiple-risks"
-                aria-expanded="false"
-              >
-                [Abstract]
-              </button>
-            </p>
-            <div class="abstract-content" id="abstract-multiple-risks">
-              <p>
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-authors"
+                  >with
+                  <a
+                    href="https://www.bse.u-bordeaux.fr/membres/cecile-aubert/"
+                    target="_blank"
+                    rel="noopener"
+                    >C. Aubert</a
+                  >,
+                  <a
+                    href="https://scholar.google.com/citations?user=CiKccNQAAAAJ&hl=fr"
+                    target="_blank"
+                    rel="noopener"
+                    >Y. Raineau</a
+                  >
+                  and
+                  <a
+                    href="https://www.researchgate.net/profile/Marc-Raynal"
+                    target="_blank"
+                    rel="noopener"
+                    >M. Raynal</a
+                  ></span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-journal"
+                  >Review of Agricultural, Food and Environmental Studies</span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-year">2024</span>
+              </div>
+            </div>
+          </div>
+          <div class="publication-body">
+            <div class="publication-body-inner">
+              <p class="abstract-text">
                 We investigate to what extent crop insurance can address the
                 multiple risks faced by agricultural producers. Climatic,
                 disease, technological and financial risks make insurance
@@ -216,51 +831,79 @@
                 to design. We stress that some risks (such as heavy rainfalls)
                 can affect the feasibility of prevention and curative actions
                 for other risks (such as crop diseases), so that risks, beyond
-                correlation, compound in a complex way. In addition, existing
-                regulations impose strong constraints that affect farmers'
-                behavior. We contrast insurance in the US and in the EU, where
-                different types of risks are covered. We illustrate some of the
-                interactions between multiple risks, regulatory constraints on
-                insurance and farmers' actions with the case of wine-growing in
-                the South-West of France. We present data on correlation between
-                rainfalls and mildew, and results from a real experiment
-                designed to reduce treatments thanks to a conditional insurance.
+                correlation, compound in a complex way. We contrast insurance in
+                the US and in the EU, where different types of risks are
+                covered. We illustrate some of the interactions between multiple
+                risks, regulatory constraints on insurance and farmers' actions
+                with the case of wine-growing in the South-West of France.
               </p>
+              <div class="paper-links">
+                <a
+                  href="https://doi.org/10.1007/s41130-024-00217-w"
+                  class="paper-link"
+                  target="_blank"
+                  rel="noopener"
+                  >Paper
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" /></svg
+                ></a>
+              </div>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="publication-item award">
-            <h3 class="publication-title">
-              <a
-                href="https://link.springer.com/article/10.1007/s11151-023-09941-x"
-                target="_blank"
-                rel="noopener"
-              >
+        <article class="publication-item" data-has-abstract="true">
+          <div
+            class="publication-header"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">
                 Decentralization and consumer welfare with substitutes or
                 complements
-              </a>
-            </h3>
-            <p class="publication-venue">
-              <em>Review of Industrial Organization</em>, 2024.
-              <button
-                class="abstract-toggle"
-                data-abstract="decentralization"
-                aria-expanded="false"
-              >
-                [Abstract]
-              </button>
-            </p>
-            <p class="publication-award">
-              🏆
-              <a
-                href="https://www.indorgsociety.org/best-paper-junior-author-award"
-                target="_blank"
-                rel="noopener"
-                >Best Paper by a Junior Author Award</a
-              >
-            </p>
-            <div class="abstract-content" id="abstract-decentralization">
-              <p>
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-journal"
+                  >Review of Industrial Organization</span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-year">2024</span>
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-award"
+                  ><a
+                    href="https://www.indorgsociety.org/best-paper-junior-author-award"
+                    target="_blank"
+                    rel="noopener"
+                    >(Awarded best Paper by a Junior Author)</a
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="publication-body">
+            <div class="publication-body-inner">
+              <p class="abstract-text">
                 We study a vertically integrated producer (VIP) that supplies a
                 downstream firm under price competition. The VIP may
                 decentralize the final price decision to its downstream unit;
@@ -273,40 +916,73 @@
                 decentralization decreases both output prices despite restoring
                 a double margin on the downstream unit's sales.
               </p>
+              <div class="paper-links">
+                <a
+                  href="https://link.springer.com/article/10.1007/s11151-023-09941-x"
+                  class="paper-link"
+                  target="_blank"
+                  rel="noopener"
+                  >Paper
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" /></svg
+                ></a>
+              </div>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="publication-item">
-            <h3 class="publication-title">
-              <a
-                href="https://www.degruyter.com/document/doi/10.1515/bejte-2021-0070/html"
-                target="_blank"
-                rel="noopener"
-              >
+        <article class="publication-item" data-has-abstract="true">
+          <div
+            class="publication-header"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">
                 Management turnover, strategic ambiguity and supply incentives
-              </a>
-            </h3>
-            <p class="publication-authors">
-              with
-              <a
-                href="https://gael.univ-grenoble-alpes.fr/membres/pascal-toquebeuf"
-                target="_blank"
-                rel="noopener"
-                >P. Toquebeuf</a
-              >
-            </p>
-            <p class="publication-venue">
-              <em>The B.E. Journal of Theoretical Economics</em>, 2023.
-              <button
-                class="abstract-toggle"
-                data-abstract="management"
-                aria-expanded="false"
-              >
-                [Abstract]
-              </button>
-            </p>
-            <div class="abstract-content" id="abstract-management">
-              <p>
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-authors"
+                  >with
+                  <a
+                    href="https://gael.univ-grenoble-alpes.fr/membres/pascal-toquebeuf"
+                    target="_blank"
+                    rel="noopener"
+                    >P. Toquebeuf</a
+                  ></span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-journal"
+                  >The B.E. Journal of Theoretical Economics</span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-year">2023</span>
+              </div>
+            </div>
+          </div>
+          <div class="publication-body">
+            <div class="publication-body-inner">
+              <p class="abstract-text">
                 When a firm appoints a new manager, it reopens the possibility
                 of new contractual friction with its partners. We explore
                 strategic ambiguity as a potential for friction with a supplier.
@@ -318,51 +994,81 @@
                 can cause the supplier to change the timing of its contracting
                 and increase its profits. We also find that this threshold
                 degree of optimism depends on the degree of product
-                substitution: it is more stringent with imperfect substitutes
-                than with perfect substitutes or unrelated goods.
+                substitution.
               </p>
+              <div class="paper-links">
+                <a
+                  href="https://www.degruyter.com/document/doi/10.1515/bejte-2021-0070/html"
+                  class="paper-link"
+                  target="_blank"
+                  rel="noopener"
+                  >Paper
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" /></svg
+                ></a>
+              </div>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="publication-item">
-            <h3 class="publication-title">
-              <a
-                href="https://link.springer.com/article/10.1007/s11238-022-09868-x"
-                target="_blank"
-                rel="noopener"
-              >
+        <article class="publication-item" data-has-abstract="true">
+          <div
+            class="publication-header"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">
                 Risk aversion and equilibrium selection in a vertical
                 contracting setting: An experiment
-              </a>
-            </h3>
-            <p class="publication-authors">
-              with
-              <a
-                href="https://gael.univ-grenoble-alpes.fr/en/olivier-bonroy"
-                target="_blank"
-                rel="noopener"
-                >O. Bonroy</a
-              >
-              and
-              <a
-                href="https://gael.univ-grenoble-alpes.fr/membres/alexis-garapin"
-                target="_blank"
-                rel="noopener"
-                >A. Garapin</a
-              >
-            </p>
-            <p class="publication-venue">
-              <em>Theory and Decision</em>, 2022.
-              <button
-                class="abstract-toggle"
-                data-abstract="selection"
-                aria-expanded="false"
-              >
-                [Abstract]
-              </button>
-            </p>
-            <div class="abstract-content" id="abstract-selection">
-              <p>
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-authors"
+                  >with
+                  <a
+                    href="https://gael.univ-grenoble-alpes.fr/en/olivier-bonroy"
+                    target="_blank"
+                    rel="noopener"
+                    >O. Bonroy</a
+                  >
+                  and
+                  <a
+                    href="https://gael.univ-grenoble-alpes.fr/membres/alexis-garapin"
+                    target="_blank"
+                    rel="noopener"
+                    >A. Garapin</a
+                  ></span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-journal">Theory and Decision</span>
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-year">2022</span>
+              </div>
+            </div>
+          </div>
+          <div class="publication-body">
+            <div class="publication-body-inner">
+              <p class="abstract-text">
                 The theoretical literature on vertical relationships usually
                 assumes that beliefs about secret contracts take specific forms.
                 In a recent paper, Eguia et al. (2018) propose a new selection
@@ -371,65 +1077,401 @@
                 risk-averse retailers, and we show that risk aversion modifies
                 the size of the belief subsets that support each equilibrium. We
                 conduct an experiment which revisits that of Eguia et al.
-                (2018). We design a new treatment effect on equilibrium
-                selection depending on the retailers' risk sensitivity.
-                Experimental results confirm the treatment effect: the more
-                sensitivity there is towards risk, the more the equilibrium
-                played is consistent with passive beliefs. In addition,
-                extending Eguia et al.'s (2018) criterion to risk-averse
-                retailers improves its predictive power on the equilibria
-                played, especially for a population of retailers with moderate
-                to extreme risk aversion.
+                (2018). Experimental results confirm the treatment effect: the
+                more sensitivity there is towards risk, the more the equilibrium
+                played is consistent with passive beliefs.
               </p>
+              <div class="paper-links">
+                <a
+                  href="https://link.springer.com/article/10.1007/s11238-022-09868-x"
+                  class="paper-link"
+                  target="_blank"
+                  rel="noopener"
+                  >Paper
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" /></svg
+                ></a>
+              </div>
             </div>
-          </article>
-        </section>
-
-        <section class="working-papers-section">
-          <h2>Working Papers</h2>
-
-          <article class="publication-item">
-            <h3 class="publication-title">
-              Winners and Losers of Gatekeeper-Induced Consumer Preference
-              Distortion in Promoting Personalized Pricing
-            </h3>
-            <p class="publication-authors">
-              with
-              <a
-                href="https://www.eeg.uminho.pt/pt/_layouts/15/uminho.portaisuoei.ui/pages/userinfo.aspx?p=996"
-                target="_blank"
-                rel="noopener"
-                >Rosa Branca Esteves</a
-              >
-            </p>
-            <p class="publication-status"><em>Submitted</em></p>
-          </article>
-
-          <article class="publication-item">
-            <h3 class="publication-title">
-              To Personalize or Not? The Impact of Asymmetric Personalization
-              Costs and the Shift from Uniform to Triangular Consumer
-              Preferences
-            </h3>
-            <p class="publication-authors">
-              with
-              <a
-                href="https://www.eeg.uminho.pt/pt/_layouts/15/uminho.portaisuoei.ui/pages/userinfo.aspx?p=996"
-                target="_blank"
-                rel="noopener"
-                >Rosa Branca Esteves</a
-              >
-            </p>
-          </article>
-        </section>
-      </main>
-
-      <footer>
-        <p>
-          <small>by npasquier | latest update: May 2025</small>
-        </p>
-      </footer>
+          </div>
+        </article>
+      </div>
     </div>
-    <script src="./javascripts/script.js"></script>
+
+    <!-- WORKING PAPERS -->
+    <div class="section section--white">
+      <div class="section__inner working-papers">
+        <h2 class="section-heading">Working papers & Works in progress</h2>
+
+        <article class="publication-item">
+          <div class="publication-header">
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">
+                Gatekeepers and the Endogenous Design of Consumer Preferences
+                under Personalized Pricing
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-authors"
+                  >with
+                  <a
+                    href="https://www.eeg.uminho.pt/pt/_layouts/15/uminho.portaisuoei.ui/pages/userinfo.aspx?p=996"
+                    target="_blank"
+                    rel="noopener"
+                    >R.B. Esteves</a
+                  ></span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="publication-status"
+                  >R&R to International Journal of Industrial Organization
+                  <span class="meta-sep">&middot;</span>
+                  <span class="meta-year">2026</span></span
+                >
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-item">
+          <div class="publication-header">
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">
+                To Personalize or Not? The Impact of Asymmetric Personalization
+                Costs and the Shift from Uniform to Triangular Consumer
+                Preferences
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-authors"
+                  >with
+                  <a
+                    href="https://www.eeg.uminho.pt/pt/_layouts/15/uminho.portaisuoei.ui/pages/userinfo.aspx?p=996"
+                    target="_blank"
+                    rel="noopener"
+                    >R.B. Esteves</a
+                  >
+                  and
+                  <a href="" target="_blank" rel="noopener"
+                    >F. Carballo-Cruz</a
+                  ></span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-year">2025</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-item">
+          <div class="publication-header">
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">
+                The welfare effects of aftermarket power with heterogeneous
+                consumers and network effects
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-year">2026</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-item">
+          <div class="publication-header">
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">
+                Competing ecosystems and investment incentives
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-year">2026</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-item">
+          <div class="publication-header">
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">
+                Threshold public goods games with model uncertainty
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-authors"
+                  >with
+                  <a
+                    href="https://gael.univ-grenoble-alpes.fr/membres/pascal-toquebeuf"
+                    target="_blank"
+                    rel="noopener"
+                    >P. Toquebeuf</a
+                  ></span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-year">2025</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-item">
+          <div class="publication-header">
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">
+                Public good games with risk and ambiguity
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-authors"
+                  >with
+                  <a
+                    href="https://gael.univ-grenoble-alpes.fr/membres/pascal-toquebeuf"
+                    target="_blank"
+                    rel="noopener"
+                    >P. Toquebeuf</a
+                  ></span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-year">2025</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-item">
+          <div class="publication-header">
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <div class="pub-info">
+              <h3 class="publication-title">Q-learning in bargaining games</h3>
+              <div class="publication-meta">
+                <span class="meta-authors"
+                  >with
+                  <a href="" target="_blank" rel="noopener">O. Bonroy</a> and
+                  <a href="" target="_blank" rel="noopener"
+                    >A. Hervouet</a
+                  ></span
+                >
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-year">2026</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- DEVELOPMENTS -->
+    <div class="section section--alt">
+      <div class="section__inner">
+        <h2 class="section-heading">Side projects</h2>
+
+        <article class="publication-item expanded" data-has-abstract="true">
+          <div
+            class="publication-header"
+            role="button"
+            tabindex="0"
+            aria-expanded="true"
+          >
+            <svg
+              class="pub-chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+
+            <div class="pub-info">
+              <h3 class="publication-title">
+                Paperazzi — Academic paper tracker for economists
+              </h3>
+              <div class="publication-meta">
+                <span class="meta-year">2025</span>
+                <span class="meta-sep">&middot;</span>
+                <span class="meta-journal">Next.js · TypeScript · OpenAlex</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="publication-body" style="max-height: none; opacity: 1">
+            <div class="publication-body-inner">
+              <p class="abstract-text">
+                Paperazzi is a web application that helps researchers in economics track,
+                organize, and review academic papers across journals and
+                fields.
+              </p>
+
+              <div class="paper-links">
+                <a
+                  href="https://paperazzi.vercel.app/"
+                  class="paper-link"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Visit website
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <small>by npasquier | latest update: March 2026</small>
+    </footer>
+
+    <script>
+      (function () {
+        'use strict';
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+        } else {
+          init();
+        }
+        function init() {
+          document
+            .querySelectorAll('.publication-item[data-has-abstract="true"]')
+            .forEach(function (item) {
+              var header = item.querySelector('.publication-header');
+              if (!header) return;
+              header.addEventListener('click', function (e) {
+                if (e.target.closest('a')) return;
+                toggleItem(item);
+              });
+              header.addEventListener('keydown', function (e) {
+                if (
+                  (e.key === 'Enter' || e.key === ' ') &&
+                  !e.target.closest('a')
+                ) {
+                  e.preventDefault();
+                  toggleItem(item);
+                }
+              });
+            });
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+              var ex = document.querySelector('.publication-item.expanded');
+              if (ex) toggleItem(ex);
+            }
+          });
+        }
+        function toggleItem(item) {
+          var body = item.querySelector('.publication-body');
+          var header = item.querySelector('.publication-header');
+          if (!body) return;
+          if (item.classList.contains('expanded')) {
+            body.style.maxHeight = body.scrollHeight + 'px';
+            body.offsetHeight;
+            body.style.maxHeight = '0';
+            item.classList.remove('expanded');
+            header.setAttribute('aria-expanded', 'false');
+          } else {
+            item.classList.add('expanded');
+            header.setAttribute('aria-expanded', 'true');
+            body.style.maxHeight = body.scrollHeight + 'px';
+            body.addEventListener('transitionend', function handler() {
+              if (item.classList.contains('expanded'))
+                body.style.maxHeight = 'none';
+              body.removeEventListener('transitionend', handler);
+            });
+          }
+        }
+      })();
+    </script>
   </body>
 </html>
