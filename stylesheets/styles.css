@@ -938,7 +938,6 @@ a:hover {
   }
 }
 
-
 .intro__email {
   margin-top: 1.4rem;
   display: flex;
@@ -949,9 +948,10 @@ a:hover {
 }
 
 .email-icon {
-  width: 20px;
-  height: 20px;
-  opacity: 0.8;
+  width: 1.05em;
+  height: 1.05em;
+  opacity: 0.75;
+  transform: translateY(1px);
 }
 
 .email-text {
