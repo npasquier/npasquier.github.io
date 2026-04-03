@@ -1,12 +1,6 @@
-/**
- * Personal Website - Abstract Toggle Handler
- * Manages the display of publication abstracts with smooth transitions
- */
-
-(function() {
+(function () {
   'use strict';
 
-  // Initialize when DOM is fully loaded
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
@@ -14,116 +8,151 @@
   }
 
   function init() {
-    setupAbstractToggles();
+    initPublications();
+    initPhotoStraighten();
   }
 
-  /**
-   * Set up event listeners for all abstract toggle buttons
-   */
-  function setupAbstractToggles() {
-    const toggleButtons = document.querySelectorAll('.abstract-toggle');
-    
-    toggleButtons.forEach(button => {
-      button.addEventListener('click', handleAbstractToggle);
-    });
-  }
+  /* ========================================
+     PUBLICATIONS — accordion toggle
+     ======================================== */
+  function initPublications() {
+    document
+      .querySelectorAll('.publication-item[data-has-abstract="true"]')
+      .forEach(function (item) {
+        var header = item.querySelector('.publication-header');
+        if (!header) return;
 
-  /**
-   * Handle abstract toggle button clicks
-   * @param {Event} event - Click event
-   */
-  function handleAbstractToggle(event) {
-    const button = event.currentTarget;
-    const abstractId = button.getAttribute('data-abstract');
-    const abstractContent = document.getElementById(`abstract-${abstractId}`);
-    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        header.addEventListener('click', function (e) {
+          if (e.target.closest('a')) return;
+          toggleItem(item);
+        });
 
-    if (!abstractContent) {
-      console.error(`Abstract content not found for ID: abstract-${abstractId}`);
-      return;
-    }
-
-    // Toggle the expanded state
-    if (isExpanded) {
-      collapseAbstract(button, abstractContent);
-    } else {
-      expandAbstract(button, abstractContent);
-    }
-  }
-
-  /**
-   * Expand an abstract section
-   * @param {HTMLElement} button - Toggle button
-   * @param {HTMLElement} content - Abstract content element
-   */
-  function expandAbstract(button, content) {
-    // Update button state
-    button.setAttribute('aria-expanded', 'true');
-    button.textContent = '[Hide Abstract]';
-
-    // Expand content
-    content.classList.add('expanded');
-
-    // Smooth scroll to button after a short delay (allows animation to start)
-    setTimeout(() => {
-      const offset = 100; // Offset from top
-      const elementPosition = button.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
+        header.addEventListener('keydown', function (e) {
+          if (
+            (e.key === 'Enter' || e.key === ' ') &&
+            !e.target.closest('a')
+          ) {
+            e.preventDefault();
+            toggleItem(item);
+          }
+        });
       });
-    }, 150);
-  }
 
-  /**
-   * Collapse an abstract section
-   * @param {HTMLElement} button - Toggle button
-   * @param {HTMLElement} content - Abstract content element
-   */
-  function collapseAbstract(button, content) {
-    // Update button state
-    button.setAttribute('aria-expanded', 'false');
-    button.textContent = '[Abstract]';
-
-    // Collapse content
-    content.classList.remove('expanded');
-  }
-
-  /**
-   * Close all expanded abstracts except the specified one (optional enhancement)
-   * @param {string} exceptId - ID of abstract to keep open
-   */
-  function closeOtherAbstracts(exceptId) {
-    const allAbstracts = document.querySelectorAll('.abstract-content.expanded');
-    const allButtons = document.querySelectorAll('.abstract-toggle[aria-expanded="true"]');
-
-    allAbstracts.forEach(abstract => {
-      if (abstract.id !== `abstract-${exceptId}`) {
-        abstract.classList.remove('expanded');
-      }
-    });
-
-    allButtons.forEach(button => {
-      if (button.getAttribute('data-abstract') !== exceptId) {
-        button.setAttribute('aria-expanded', 'false');
-        button.textContent = '[Abstract]';
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        var ex = document.querySelector('.publication-item.expanded');
+        if (ex) toggleItem(ex);
       }
     });
   }
 
-  // Optional: Add keyboard navigation support
-  document.addEventListener('keydown', function(event) {
-    // Close abstracts with Escape key
-    if (event.key === 'Escape') {
-      const expandedButton = document.querySelector('.abstract-toggle[aria-expanded="true"]');
-      if (expandedButton) {
-        const abstractId = expandedButton.getAttribute('data-abstract');
-        const abstractContent = document.getElementById(`abstract-${abstractId}`);
-        collapseAbstract(expandedButton, abstractContent);
-      }
+  function toggleItem(item) {
+    var body = item.querySelector('.publication-body');
+    var header = item.querySelector('.publication-header');
+    if (!body) return;
+
+    if (item.classList.contains('expanded')) {
+      body.style.maxHeight = body.scrollHeight + 'px';
+      body.offsetHeight; // force reflow
+      body.style.maxHeight = '0';
+      item.classList.remove('expanded');
+      header.setAttribute('aria-expanded', 'false');
+    } else {
+      item.classList.add('expanded');
+      header.setAttribute('aria-expanded', 'true');
+      body.style.maxHeight = body.scrollHeight + 'px';
+      body.addEventListener('transitionend', function handler() {
+        if (item.classList.contains('expanded'))
+          body.style.maxHeight = 'none';
+        body.removeEventListener('transitionend', handler);
+      });
     }
-  });
+  }
 
+  /* ========================================
+     PHOTO — click-to-straighten with
+     thumb-press tape animation & drift-back
+     ======================================== */
+  function initPhotoStraighten() {
+    var frame = document.getElementById('profileFrame');
+    if (!frame) return;
+
+    var thumbEl = frame.querySelector('.tape-fx-thumb');
+    var shadowEl = frame.querySelector('.tape-fx-thumb-shadow');
+    var wrapperEl = frame.querySelector('.tape-wrapper');
+
+    var isStraight = false;
+    var driftTimer = null;
+
+    // Random tilt: magnitude 1.8–3.5°, random direction
+    function randomTilt() {
+      var dir = Math.random() > 0.5 ? 1 : -1;
+      return dir * (1.8 + Math.random() * 1.7);
+    }
+
+    // Random drift delay: 3–6 seconds
+    function randomDriftDelay() {
+      return 3000 + Math.random() * 3000;
+    }
+
+    // Helper: restart a CSS animation by removing and re-adding a class
+    function resetAnim(el, className) {
+      if (!el) return;
+      el.classList.remove(className);
+      void el.offsetWidth; // force reflow
+      el.classList.add(className);
+    }
+
+    // Set initial crooked angle
+    var currentTilt = -2.8;
+    frame.style.transform = 'rotate(' + currentTilt + 'deg)';
+
+    function playThumbPress() {
+      resetAnim(thumbEl, 'press');
+      resetAnim(shadowEl, 'press');
+      resetAnim(wrapperEl, 'do-thumb');
+    }
+
+    function straighten() {
+      if (isStraight) return;
+      isStraight = true;
+
+      // Snap straight with spring easing
+      frame.classList.add('is-straight');
+      frame.style.transition =
+        'transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)';
+      frame.style.transform = 'rotate(0deg)';
+
+      // Play thumb press on tape
+      playThumbPress();
+
+      // Schedule drift back to crooked
+      clearTimeout(driftTimer);
+      driftTimer = setTimeout(function () {
+        frame.classList.remove('is-straight');
+        currentTilt = randomTilt();
+
+        // Slow gentle easing for the drift
+        frame.style.transition =
+          'transform 1.8s cubic-bezier(0.25, 0.1, 0.25, 1)';
+        frame.style.transform = 'rotate(' + currentTilt + 'deg)';
+
+        isStraight = false;
+
+        // Restore snappy transition for next click
+        setTimeout(function () {
+          frame.style.transition =
+            'transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        }, 1900);
+      }, randomDriftDelay());
+    }
+
+    frame.addEventListener('click', straighten);
+    frame.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        straighten();
+      }
+    });
+  }
 })();
