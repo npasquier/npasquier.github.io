@@ -952,7 +952,11 @@ a:hover {
   opacity: 0.7;
   transform: translateY(-1px);
   margin-right: 0px;
-}
+  width: 18px; /* sets the icon width */
+  height: 18px; /* sets the icon height */
+  display: flex;
+  align-items: center;
+  justify-content: center;}
 
 .email-text {
   font-size: 1rem;
