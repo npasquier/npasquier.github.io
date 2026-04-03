@@ -948,14 +948,14 @@ a:hover {
 }
 
 .email-icon {
-  width: 1.05em;
-  height: 1.05em;
-  opacity: 0.75;
-  transform: translateY(1px);
+  font-size: 1.1em;
+  opacity: 0.7;
+  transform: translateY(-1px);
+  margin-right: 0px;
 }
 
 .email-text {
   font-size: 1rem;
   opacity: 0.8;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.1px;
 }
