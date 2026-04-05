@@ -29,10 +29,7 @@
         });
 
         header.addEventListener('keydown', function (e) {
-          if (
-            (e.key === 'Enter' || e.key === ' ') &&
-            !e.target.closest('a')
-          ) {
+          if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a')) {
             e.preventDefault();
             toggleItem(item);
           }
@@ -51,20 +48,23 @@
     var body = item.querySelector('.publication-body');
     var header = item.querySelector('.publication-header');
     if (!body) return;
-
     if (item.classList.contains('expanded')) {
+      // Closing: kill opacity first, then collapse height
+      body.style.opacity = '0';
       body.style.maxHeight = body.scrollHeight + 'px';
-      body.offsetHeight;
+      body.offsetHeight; // force reflow
       body.style.maxHeight = '0';
       item.classList.remove('expanded');
       header.setAttribute('aria-expanded', 'false');
     } else {
+      // Opening: expand height, opacity follows via CSS
       item.classList.add('expanded');
       header.setAttribute('aria-expanded', 'true');
+      body.style.opacity = '1';
       body.style.maxHeight = body.scrollHeight + 'px';
-      body.addEventListener('transitionend', function handler() {
-        if (item.classList.contains('expanded'))
-          body.style.maxHeight = 'none';
+      body.addEventListener('transitionend', function handler(e) {
+        if (e.propertyName !== 'max-height') return;
+        if (item.classList.contains('expanded')) body.style.maxHeight = 'none';
         body.removeEventListener('transitionend', handler);
       });
     }
@@ -160,7 +160,10 @@
       var sx = angle * 0.8;
       var blur = 8 + Math.abs(angle) * 1.5;
       card.style.boxShadow =
-        sx + 'px 3px ' + blur + 'px rgba(0,0,0,0.1), ' +
+        sx +
+        'px 3px ' +
+        blur +
+        'px rgba(0,0,0,0.1), ' +
         '0 1px 3px rgba(0,0,0,0.08)';
     }
 
@@ -172,8 +175,14 @@
 
     function setTrans(duration, easing) {
       card.style.transition =
-        'transform ' + duration + ' ' + easing + ', ' +
-        'box-shadow ' + duration + ' ease';
+        'transform ' +
+        duration +
+        ' ' +
+        easing +
+        ', ' +
+        'box-shadow ' +
+        duration +
+        ' ease';
     }
 
     // --- Initial droop ---
@@ -191,9 +200,7 @@
       if (locked) return;
 
       // Immediate nudge: small kick opposite to the tilt
-      var nudge = currentAngle > 0
-        ? currentAngle - 1.2
-        : currentAngle + 1.2;
+      var nudge = currentAngle > 0 ? currentAngle - 1.2 : currentAngle + 1.2;
 
       setTrans('0.18s', 'ease-out');
       applyAngle(nudge);
@@ -273,7 +280,6 @@
             setTrans('0.7s', 'cubic-bezier(0.34, 1.56, 0.64, 1)');
           }, 1000);
         }, 1100);
-
       }, randomDelay());
     });
 
