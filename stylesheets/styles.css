@@ -265,10 +265,9 @@ a:hover {
   cursor: pointer;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  filter: brightness(0.98);
 }
-.profile-frame:hover .profile-photo-card {
-  filter: brightness(1.015);
-}
+
 .profile-photo-card {
   position: relative;
   z-index: 1;
