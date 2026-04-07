@@ -18,9 +18,10 @@
      Crimson Text  → headings, welcome, intro prose (editorial serif)
      Source Sans 3 → body, UI, nav, meta, tags, buttons (clean sans)
      Georgia       → serif fallback only                              */
-  --font-sans: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  --font-serif: "Crimson Text", Georgia, "Times New Roman", serif;
+  --font-sans:
+    'Source Sans 3', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  --font-serif: 'Crimson Text', Georgia, 'Times New Roman', serif;
 
   --content-width: 820px;
   --section-pad-y: 3.5rem;
@@ -265,7 +266,7 @@ a:hover {
   cursor: pointer;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  filter: brightness(0.98);
+  filter: brightness(0.96) contrast(1.04);
 }
 
 .profile-photo-card {
@@ -284,15 +285,17 @@ a:hover {
     1px 2px 12px rgba(0, 0, 0, 0.06);
 }
 .profile-photo-card::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 2px;
-  background: repeating-conic-gradient(
-      rgba(0, 0, 0, 0.01) 0% 25%,
-      transparent 0% 50%
-    )
-    0 0 / 3px 3px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.03) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.02) 100%
+  );
   pointer-events: none;
 }
 .profile-image {
@@ -332,7 +335,7 @@ a:hover {
   overflow: hidden;
 }
 .tape::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background:
@@ -359,7 +362,7 @@ a:hover {
   pointer-events: none;
 }
 .tape::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-left: 1px solid rgba(0, 0, 0, 0.06);
@@ -417,20 +420,50 @@ a:hover {
   pointer-events: none;
   opacity: 0;
   background:
-    radial-gradient(circle, transparent 30%, rgba(180, 170, 140, 0.15) 35%, transparent 40%),
-    radial-gradient(circle, transparent 50%, rgba(180, 170, 140, 0.12) 55%, transparent 60%),
-    radial-gradient(circle, transparent 70%, rgba(180, 170, 140, 0.08) 75%, transparent 80%),
+    radial-gradient(
+      circle,
+      transparent 30%,
+      rgba(180, 170, 140, 0.15) 35%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle,
+      transparent 50%,
+      rgba(180, 170, 140, 0.12) 55%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle,
+      transparent 70%,
+      rgba(180, 170, 140, 0.08) 75%,
+      transparent 80%
+    ),
     radial-gradient(circle, rgba(160, 150, 120, 0.18) 0%, transparent 70%);
 }
 .tape-fx-thumb.press {
   animation: thumbPress 0.8s ease forwards;
 }
 @keyframes thumbPress {
-  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-  15% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
-  30% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
-  70% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
-  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0; }
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  15% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0;
+  }
 }
 .tape-fx-thumb-shadow {
   position: absolute;
@@ -450,19 +483,39 @@ a:hover {
   animation: thumbShadow 0.6s ease forwards;
 }
 @keyframes thumbShadow {
-  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-  20% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-  60% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
-  100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
 }
 .tape-wrapper.do-thumb {
   animation: tapeDepress 0.5s ease forwards;
 }
 @keyframes tapeDepress {
-  0% { transform: translateX(-50%) rotate(2deg) scale(1); }
-  20% { transform: translateX(-50%) rotate(2deg) scale(0.97) translateY(1px); }
-  50% { transform: translateX(-50%) rotate(2deg) scale(0.97) translateY(1px); }
-  100% { transform: translateX(-50%) rotate(2deg) scale(1) translateY(0); }
+  0% {
+    transform: translateX(-50%) rotate(2deg) scale(1);
+  }
+  20% {
+    transform: translateX(-50%) rotate(2deg) scale(0.97) translateY(1px);
+  }
+  50% {
+    transform: translateX(-50%) rotate(2deg) scale(0.97) translateY(1px);
+  }
+  100% {
+    transform: translateX(-50%) rotate(2deg) scale(1) translateY(0);
+  }
 }
 
 /* ========================================
@@ -487,13 +540,25 @@ a:hover {
   animation: fadeInItem 0.4s ease forwards;
 }
 @keyframes fadeInItem {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
-.publication-item:nth-child(1) { animation-delay: 0.3s; }
-.publication-item:nth-child(2) { animation-delay: 0.38s; }
-.publication-item:nth-child(3) { animation-delay: 0.46s; }
-.publication-item:nth-child(4) { animation-delay: 0.54s; }
-.publication-item:nth-child(5) { animation-delay: 0.62s; }
+.publication-item:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.publication-item:nth-child(2) {
+  animation-delay: 0.38s;
+}
+.publication-item:nth-child(3) {
+  animation-delay: 0.46s;
+}
+.publication-item:nth-child(4) {
+  animation-delay: 0.54s;
+}
+.publication-item:nth-child(5) {
+  animation-delay: 0.62s;
+}
 
 .publication-header {
   display: flex;
@@ -518,8 +583,9 @@ a:hover {
   margin-top: 0.2rem;
   transition: transform var(--transition-base);
   color: var(--color-text-light);
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              color 0.2s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.2s ease;
 }
 .publication-item.expanded .pub-chevron {
   transform: rotate(90deg);
@@ -656,13 +722,13 @@ a:hover {
 }
 
 /* Items without abstracts */
-.publication-item:not([data-has-abstract="true"]) .publication-header {
+.publication-item:not([data-has-abstract='true']) .publication-header {
   cursor: default;
 }
-.publication-item:not([data-has-abstract="true"]) .publication-header:hover {
+.publication-item:not([data-has-abstract='true']) .publication-header:hover {
   background-color: transparent;
 }
-.publication-item:not([data-has-abstract="true"]) .pub-chevron {
+.publication-item:not([data-has-abstract='true']) .pub-chevron {
   display: none;
 }
 .publication-status {
