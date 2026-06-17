@@ -56,22 +56,14 @@
     <div class="section section--white intro">
       <div class="intro__inner">
         <div class="intro__left">
-          <div
-            class="profile-frame"
-            id="profileFrame"
-            role="button"
-            tabindex="0"
-            aria-label="Click to straighten the photo"
-          >
-            <!-- Tape — stays fixed -->
+          <div class="profile-frame">
+            <!-- Tape — decorative -->
             <div class="tape-wrapper">
               <div class="tape"></div>
               <div class="tape-sheen"></div>
-              <div class="tape-fx-thumb"></div>
-              <div class="tape-fx-thumb-shadow"></div>
             </div>
 
-            <!-- Photo card — swings beneath the tape -->
+            <!-- Photo card -->
             <div class="profile-photo-card">
               <img
                 src="images/profile-pic2.jpg"
@@ -544,11 +536,20 @@
     </div>
 
     <!-- WORKING PAPERS -->
-    <div class="section section--alt section--tight-top">
+    <div class="section section--alt section--tight-top section--tight-bottom">
       <div class="section__inner working-papers">
-        <h2 class="section-heading section-heading--subtle">
-          Works in progress
-        </h2>
+        <h2 class="section-heading section-heading--subtle">Working Papers</h2>
+        <!--
+          TO ADD A LINK to a working paper: paste this block inside that paper's
+          <div class="pub-info">, right after its <div class="publication-meta">…</div>:
+
+          <div class="paper-links">
+            <a href="PASTE_URL_HERE" class="paper-link" target="_blank" rel="noopener">Paper
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+              </svg></a>
+          </div>
+        -->
         <article class="publication-item">
           <div class="publication-header">
             <svg
@@ -655,6 +656,7 @@
                 <span class="meta-year">2026</span>
               </div>
             </div>
+            <span class="meta-soon meta-paper-link--right">new draft coming soon</span>
           </div>
         </article>
         <article class="publication-item">
@@ -672,12 +674,29 @@
             </svg>
             <div class="pub-info">
               <h3 class="publication-title">
-                Competing ecosystems and investment incentives
+                Competing ecosystems and quality investment
               </h3>
               <div class="publication-meta">
                 <span class="meta-year">2026</span>
               </div>
             </div>
+            <a
+              href="https://gael.univ-grenoble-alpes.fr/sites/default/files/Mediatheque/doc-recherche/WP/A2024/gael2026-03.pdf"
+              class="meta-paper-link meta-paper-link--right"
+              target="_blank"
+              rel="noopener"
+              >Working paper
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" /></svg
+            ></a>
           </div>
         </article>
         <article class="publication-item">
@@ -711,6 +730,7 @@
                 <span class="meta-year">2025</span>
               </div>
             </div>
+            <span class="meta-soon meta-paper-link--right">new draft coming soon</span>
           </div>
         </article>
         <article class="publication-item">
@@ -744,8 +764,32 @@
                 <span class="meta-year">2025</span>
               </div>
             </div>
+            <a
+              href="https://www.researchgate.net/publication/396325372_Public_goods_game_with_risk_and_ambiguity"
+              class="meta-paper-link meta-paper-link--right"
+              target="_blank"
+              rel="noopener"
+              >Working paper
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" /></svg
+            ></a>
           </div>
         </article>
+      </div>
+    </div>
+
+    <!-- WORKS IN PROGRESS -->
+    <div class="section section--alt section--tight-top">
+      <div class="section__inner working-papers">
+        <h2 class="section-heading section-heading--subtle">Works in progress</h2>
         <article class="publication-item">
           <div class="publication-header">
             <svg

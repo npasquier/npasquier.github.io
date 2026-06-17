@@ -263,9 +263,7 @@ a:hover {
   position: relative;
   width: 195px;
   margin: 0 auto 0.85rem;
-  cursor: pointer;
   user-select: none;
-  -webkit-tap-highlight-color: transparent;
   filter: brightness(0.96) contrast(1.04);
 }
 
@@ -567,7 +565,6 @@ a:hover {
   padding: 0.9rem 0;
   cursor: pointer;
   border-bottom: 1px solid var(--color-border-light);
-  user-select: none;
   transition: background-color var(--transition-fast);
 }
 .publication-header:hover {
@@ -643,6 +640,45 @@ a:hover {
 }
 .meta-year {
   color: var(--color-text-light);
+}
+.meta-paper-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 2px;
+  transition:
+    text-decoration-color var(--transition-fast),
+    color var(--transition-fast);
+}
+.meta-paper-link:hover {
+  color: var(--color-navbar);
+  text-decoration-color: var(--color-navbar);
+}
+.meta-paper-link--right {
+  margin-left: auto;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  padding-left: 1rem;
+}
+.meta-paper-link--right:hover {
+  color: var(--color-text);
+  text-decoration-color: currentColor;
+}
+.meta-paper-link--right svg {
+  width: 11px;
+  height: 11px;
+}
+.meta-soon {
+  font-style: italic;
+  color: var(--color-text-light);
+  cursor: default;
 }
 .meta-award {
   font-size: 0.82rem;
